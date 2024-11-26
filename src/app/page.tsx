@@ -11,7 +11,7 @@ export default function Home() {
     <Image src="https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
       alt = "Grupo de estudantes em uma roda" className = "img" width={500} height ={500}/>
 
-      <h1 className = "h1">Avaliação de professores</h1>
+      <h1 className = "AvProf">Avaliação de professores</h1>
 
       <form className = "form">
           <label htmlFor="email"></label><br/>

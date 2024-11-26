@@ -35,23 +35,25 @@ body {
   padding: 160px;
 }
 
-.h1 {
+.AvProf {
   position: fixed;
   color: #282828;;
   top: 5%;
-  right: 10%;
+  left: 20%;
   font-size: 50px;
+  padding-left: 20px;
+  margin-left: 25rem;
 }
 
 .button {
   position: fixed;
   width: 150px;
   height: 60px;
-  top: 40%;
-  right: 30%;
+  top: 50%;
+  right: 28%;
   background-color: #dddda1;
   color: #282828;
-  padding: 30px;
+  padding: 1rem 2rem;
   border-radius: 20px;
   text-align: center;
 }
@@ -60,11 +62,11 @@ body {
   position: fixed;
   width: 150px;
   height: 60px;
-  top: 40%;
-  right: 15%;
+  top: 50%;
+  right: 12%;
   background-color: #dddda1;
   color: #282828;
-  padding: 30px;
+  padding: 1rem 2rem;
   border-radius: 20px;
   text-align: center;
 }
@@ -73,8 +75,8 @@ body {
   position: fixed;
   width: 400px;
   height: 60px;
-  top: 20%;
-  right: 15%;
+  top: 23%;
+  right: 10%;
   background-color: #ffffff;
   color: #282828;
   padding: 30px;
@@ -86,8 +88,8 @@ body {
   position: fixed;
   width: 400px;
   height: 60px;
-  top: 30%;
-  right: 15%;
+  top: 35%;
+  right: 10%;
   background-color: #ffffff;
   color: #282828;
   padding: 30px;
