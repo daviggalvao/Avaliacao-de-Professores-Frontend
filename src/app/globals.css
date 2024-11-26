@@ -45,24 +45,11 @@ body {
   margin-left: 25rem;
 }
 
-.button {
+.buttonc {
   position: fixed;
   width: 150px;
   height: 60px;
-  top: 50%;
-  right: 28%;
-  background-color: #dddda1;
-  color: #282828;
-  padding: 1rem 2rem;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.button2 {
-  position: fixed;
-  width: 150px;
-  height: 60px;
-  top: 50%;
+  top: 80%;
   right: 12%;
   background-color: #dddda1;
   color: #282828;
@@ -71,11 +58,10 @@ body {
   text-align: center;
 }
 
-.button3 {
+.buttonf {
   position: fixed;
   width: 400px;
   height: 60px;
-  top: 23%;
   right: 10%;
   background-color: #ffffff;
   color: #282828;
@@ -84,15 +70,43 @@ body {
   text-align: center;
 }
 
-.button4 {
-  position: fixed;
-  width: 400px;
-  height: 60px;
-  top: 35%;
-  right: 10%;
-  background-color: #ffffff;
-  color: #282828;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
+.emaillog{
+  top: 23%
+}
+
+.senhalog{
+  top: 35%
+}
+
+.nome {
+  top: 19%;
+}
+
+.email {
+  top: 31%;
+}
+
+.senha {
+  top: 43%;
+}
+
+.curso {
+  top: 55%;
+}
+
+.departamento {
+  top: 67%;
+}
+
+.criarlog{
+  top: 50%;
+}
+
+.criarpic{
+  top: 85%;
+}
+
+.entrarlog{
+  right: 28%;
+  top: 50%;
 }
