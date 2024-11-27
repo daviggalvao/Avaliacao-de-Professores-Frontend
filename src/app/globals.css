@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #f0f0f0;
-  --foreground: #171717;
+  --background: #27BD80;
+  --foreground: #001830;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f0f0f0;
-    --foreground: #ededed;
+    --background: #001830;
+    --foreground: #27BD80;
   }
 }
 
@@ -30,16 +30,16 @@ body {
   position: fixed;
   top: 15%;
   right: 15%;
-  background-color: #f0f0f0;
+  background-color: #001830;
   color: #282828;
   padding: 160px;
 }
 
 .AvProf {
   position: fixed;
-  color: #282828;;
+  color: #ffffff;
   top: 5%;
-  left: 20%;
+  left: 23%;
   font-size: 50px;
   padding-left: 20px;
   margin-left: 25rem;
@@ -51,8 +51,8 @@ body {
   height: 60px;
   top: 80%;
   right: 12%;
-  background-color: #dddda1;
-  color: #282828;
+  background-color: #27BD80;
+  color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 20px;
   text-align: center;
