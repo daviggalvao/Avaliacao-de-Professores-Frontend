@@ -10,10 +10,14 @@ export default function Home() {
       alt = "Grupo de estudantes em uma roda" className = "img metadeesq" width={500} height ={500}/>
 
       <div className = "metadedir">
+        <br/>
+        <br/>
         <h1 className = "AvProf">Avaliação de Professores</h1>
         <form>
+          <br/>
+          <br/>
             <label htmlFor="email"></label><br/>
-            <input className = "buttonf log" type="email" id="email" name="email" placeholder = "Email"/><br/>
+            <input className = "buttonf log" type="email" id="email" name="email" placeholder = "Email"/>
             <label htmlFor="senha"></label><br/>
             <input className = "buttonf log" type="password" id="senha" name="senha" placeholder = "Senha"/>
         </form> 

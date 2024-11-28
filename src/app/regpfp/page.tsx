@@ -9,10 +9,11 @@ export default function Home() {
       alt = "Grupo de estudantes em uma roda" className = "img metadeesq" width={500} height ={500}/>
 
       <div className = "metadedir">
-          <h1 className = "AvProf">Avaliação de Professores</h1>
 
+      <Image src="https://th.bing.com/th/id/OIP.hcRhDT8KVqzySjYJmBhlzgHaHa?rs=1&pid=ImgDetMain" 
+      alt = "Foto de perfil não cadastrada" className = "pfp" width={100} height ={100}/>
+          
           <form>
-            <br/>
               <label htmlFor="email"></label><br/>
               <input className = "buttonf create" type="email" id="email" name="email" placeholder = "Email"/>
 

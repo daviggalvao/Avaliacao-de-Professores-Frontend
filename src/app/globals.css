@@ -43,12 +43,19 @@ body {
   object-fit: cover;
 }
 
+.pfp{
+  height: 7rem;
+  width: 7rem;
+  margin-top: 0.5rem;
+  border-radius: 50%;
+}
+
 .AvProf {
   color: #ffffff;
   text-align: center;
-  top: 5rem;
+  top: 2rem;
   font-size: 50px;
-  position: fixed;
+  position: relative;
 }
 .buttonc {
   width: 150px;
@@ -71,20 +78,4 @@ body {
   margin-bottom: 1rem;
   text-align: center;
   position: relative;
-}
-
-.log {
-  top: 10rem;
-}
-
-.createlog {
-  top: 10rem;
-}
-
-.create {
-  top: 10rem;
-}
-
-.criarlogreg {
-  top: 10rem;
 }
