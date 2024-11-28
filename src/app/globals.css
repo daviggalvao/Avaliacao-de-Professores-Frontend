@@ -2,16 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/*Principais cores da CJR:*/
 :root {
-  --background: #27BD80;
-  --foreground: #001830;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #001830;
-    --foreground: #27BD80;
-  }
+  --foreground: #27bd80;
+  --background: #001830;
+  --black: #151515;
+  --white: #f5f5f5;
+  --oldbackground: #002f67;
+  --oldforeground: #73c14a;
 }
 
 body {
@@ -20,93 +18,73 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.janela {
+  display: flex;
+  height: 100vh;
+}
+
+.metadeesq {
+  flex: 0.5;
+  display: flex;
+}
+
+.metadedir {
+  flex: 0.5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
 .img {
   height: 100%;
-  width: 50%;
+  width: 100%;
   object-fit: cover;
 }
 
-.form {
-  position: fixed;
-  top: 15%;
-  right: 15%;
-  background-color: #001830;
-  color: #282828;
-  padding: 160px;
-}
-
 .AvProf {
-  position: fixed;
   color: #ffffff;
-  top: 5%;
-  left: 23%;
+  text-align: center;
+  top: 5rem;
   font-size: 50px;
-  padding-left: 20px;
-  margin-left: 25rem;
-}
-
-.buttonc {
   position: fixed;
+}
+.buttonc {
   width: 150px;
   height: 60px;
-  top: 80%;
-  right: 12%;
-  background-color: #27BD80;
+  background-color: #27bd80;
   color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 20px;
-  text-align: center;
+  margin-inline: 1rem;
+  position: relative;
 }
 
 .buttonf {
-  position: fixed;
   width: 400px;
   height: 60px;
-  right: 10%;
   background-color: #ffffff;
   color: #282828;
   padding: 30px;
   border-radius: 20px;
+  margin-bottom: 1rem;
   text-align: center;
+  position: relative;
 }
 
-.emaillog{
-  top: 23%
+.log {
+  top: 10rem;
 }
 
-.senhalog{
-  top: 35%
+.createlog {
+  top: 10rem;
 }
 
-.nome {
-  top: 19%;
+.create {
+  top: 10rem;
 }
 
-.email {
-  top: 31%;
-}
-
-.senha {
-  top: 43%;
-}
-
-.curso {
-  top: 55%;
-}
-
-.departamento {
-  top: 67%;
-}
-
-.criarlog{
-  top: 50%;
-}
-
-.criarpic{
-  top: 85%;
-}
-
-.entrarlog{
-  right: 28%;
-  top: 50%;
+.criarlogreg {
+  top: 10rem;
 }
