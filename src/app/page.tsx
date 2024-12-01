@@ -3,37 +3,101 @@
 import Image from "next/image";
 import Link from "next/link";
 import './styles/globals.css';
-import styles from './styles/login.module.css';
-
+import styles from './styles/feed.module.css';
 
 export default function Home() {
   return (
-  <div className = {styles.janela}>
-    <Image src="https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-      alt = "Grupo de estudantes em uma roda" className = {styles.metadeesq} width={500} height ={500}/>
-
-      <div className = {styles.metadedir}>
-        <br/>
-        <br/>
-        <h1 className= {styles.title}>Avaliação de Professores</h1>
-        <form>
-          <br/>
-          <br/>
-            <label htmlFor="email"></label><br/>
-            <input className = {styles.buttonf} type="email" id="email" name="email" placeholder = "Email"/>
-            <label htmlFor="senha"></label><br/>
-            <input className = {styles.buttonf} type="password" id="senha" name="senha" placeholder = "Senha"/>
-        </form> 
-
-        <div className="py-8 px-8 max-w-sm mx-auto space-y-2 bg-white rounded-xl shadow-lg sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:gap-x-6">
-          <button className = {styles.buttonc} >Entrar </button>
-          <Link href = "/register">
-            <button className = {styles.buttonc} >Criar Conta</button>
+  <div>
+      <div className = {styles.topo}>
+          <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+          alt = "Logo UNB" className = {styles.logo} width={50} height={50}/>
+          <Link href = "">
+            <button className = {styles.loginbutton}>Login</button>
           </Link>
-          
+      </div>
+
+      <div className = {styles.feedbody}>
+
+        <div className = {styles.searchboxjan}>
+          <input type="text" placeholder="Buscar Professor(a)" className={styles.searchbox}></input>
         </div>
 
+        <h1 className = {styles.title}>Novos Professores</h1>
+        
+        <section className = {styles.secaoprof}>
+          
+          <div className = {styles.moldeprof}>
+            <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor1</h2>
+            <p>disciplina</p>
+          </div>
+
+          <div className = {styles.moldeprof}>    
+            <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor2</h2>
+            <p>disciplina</p>
+          </div>
+
+          <div className = {styles.moldeprof}>    
+            <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor3</h2>
+            <p>disciplina</p>
+          </div>
+
+          <div className = {styles.moldeprof}>
+            <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor4</h2>
+            <p>disciplina</p>
+          </div>
+          
+        </section>
+        
+        <h1 className = {styles.title}>Todos os Professores</h1>
+
+        <section className = {styles.secaoprof}>
+          <div className = {styles.moldeprof}>
+              <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor1</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>    
+              <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor2</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>    
+              <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor3</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>
+              <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor4</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>
+              <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor5</h2>
+              <p>disciplina</p>
+            </div>
+          
+        </section>  
+
       </div>
+
   </div>
 
   );
