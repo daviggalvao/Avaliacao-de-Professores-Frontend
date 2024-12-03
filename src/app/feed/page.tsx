@@ -56,7 +56,10 @@ export default function Home() {
           
         </section>
         
-        <h1 className = {styles.title}>Todos os Professores</h1>
+        <div className= "flex justify-between items-center max-w-screen-lg">
+          <h1 className = {styles.title}>Todos os Professores</h1>
+          <button className = "bg-blue-400 text-white rounded">Nova Publicação</button>
+        </div>
 
         <section className = {styles.secaoprof}>
           <div className = {styles.moldeprof}>
