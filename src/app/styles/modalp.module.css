@@ -1,0 +1,11 @@
+.buttonm {
+    width: 400px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #282828;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+  }

@@ -47,7 +47,7 @@ body {
 
 .buttonf {
   width: 400px;
-  height: 60px;
+  height: 40px;
   background-color: #ffffff;
   color: #282828;
   padding: 30px;
@@ -56,3 +56,5 @@ body {
   text-align: center;
   position: relative;
 }
+
+
