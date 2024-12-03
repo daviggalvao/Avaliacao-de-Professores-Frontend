@@ -32,7 +32,7 @@ export default function Home() {
 
           </form> 
 
-          <div className="py-8 px-8 max-w-sm mx-auto space-y-2 bg-white rounded-xl shadow-lg sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:gap-x-6">
+          <div className="">
             <button className = {styles.buttonc}>Criar Conta</button>
           </div>
         </div>
