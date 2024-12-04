@@ -1,21 +1,24 @@
 import api from '../utils/api';
 
-const postComentario = async () => {
-    await api.post('/comentario')
+const postComentario = async (dados: Comentario) => {
+    const response = await api.post('/comentario', dados)
+    return response.data
 }
 
 const getAllComentarios = async () => {
     await api.get('/comentario')
 }
 
-const getComentario = async () => {
-    await api.get(`/comentario/1`)
+const getComentario = async (id: number) => {
+    await api.get(`/comentario/${id}`)
 }
 
-const updateComentario = async () => {
-    await api.patch(`/comentario/1`)
+const updateComentario = async (id: number, dados: Comentario) => {
+    const response = await api.patch(`/comentario/${id}`, dados)
+    return response.data
 }
 
-const deleteComentario = async () => {
-    await api.delete(`/comentario/1`)
+const deleteComentario = async (id: number) => {
+    const response = await api.delete(`/comentario/${id}`)
+    return response.data
 }
