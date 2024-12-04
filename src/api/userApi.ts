@@ -1,9 +1,21 @@
 import api from '../utils/api';
 
+const postUser = async () => {
+    await api.post('/user')
+}
+
+const getAllUsers = async () => {
+    await api.get('/user')
+}
+
 const getUser = async () => {
     await api.get(`/user/1`)
 }
 
-const getAll = async () => {
-    api.get('/users')
+const updateUser = async () => {
+    await api.patch(`/user/1`)
+}
+
+const deleteUser = async () => {
+    await api.delete(`/user/1`)
 }
