@@ -1,4 +1,5 @@
 import api from '../utils/api';
+import { Comentario } from '../types/Comentario';
 
 const postComentario = async (dados: Comentario) => {
     const response = await api.post('/comentario', dados)

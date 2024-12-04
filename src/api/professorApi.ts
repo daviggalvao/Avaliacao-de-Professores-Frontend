@@ -1,4 +1,5 @@
 import api from '../utils/api';
+import { Professor } from '../types/Professor';
 
 const postProfessor = async (dados: Professor) => {
     const response = await api.post('/professor', dados)
