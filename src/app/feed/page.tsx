@@ -11,7 +11,7 @@ export default function Home() {
       <div className = {styles.topo}>
           <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
           alt = "Logo UNB" className = {styles.logo} width={50} height={50}/>
-          <Link href = "">
+          <Link href = "/perfil">
             <button className = {styles.loginbutton}>Login</button>
           </Link>
       </div>

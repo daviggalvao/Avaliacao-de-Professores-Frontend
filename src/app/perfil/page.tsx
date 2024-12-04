@@ -11,12 +11,16 @@ export default function Home() {
       <div className = {styles.topo}>
           <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
           alt = "Logo UNB" className = {styles.logo} width={50} height={50}/>
+
+          <Link href = "/feed">
+            <button className = " bg-green-500 w-40 border border-black rounded mt-8">voltar</button>
+            </Link>
+
           <Link href = "">
             <button className = {styles.loginbutton}>Login</button>
           </Link>
-      </div>
 
-      <button className = " bg-green-500 w-20 rounded absolute ml-80 mt-8">voltar</button>
+      </div>
 
       <div className = "flex justify-center items-center h-screen bg-white">
 
@@ -25,8 +29,8 @@ export default function Home() {
           <div className = "bg-white-100 w-full h-1/4 border-b-2 border-green-600">
 
             <Image 
-              src="https://static.wikia.nocookie.net/multiversus/images/6/6c/Morty_Profile_Icon.png/revision/latest?cb=20221015092937"
-              alt = "Morty" width={50} height={50} className= "w-32 h-32 rounded-full ml-16 mt-8"
+              src="morty.svg"
+              alt = "Morty" width={25} height={25} className= "w-32 h-32 border border-black rounded-full ml-16 mt-8"
               />
 
             <h1 className = "text-xl font-bold ml-16">Nome do aluno</h1>
@@ -35,8 +39,25 @@ export default function Home() {
 
             <h2 className = "text-xs ml-16">Email do aluno</h2>
           </div>
-          <div>
+
+          <div className = "flex-col items-center justify-center">
             <h1 className = "text-xl font-bold ml-4 mt-4" >Publicações</h1>
+
+            <div className = " m-auto mt-10 bg-green-500 rounded-lg w-2/3">
+              <h3 className = "text-xs font-bold">Nome do Aluno</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores provident tenetur deleniti at reiciendis aperiam fugit esse odit impedit! Iusto recusandae vero culpa odit ut quam aliquam modi dolores veritatis.</p>
+            </div>
+
+            <div className = " m-auto mt-10 bg-green-500 rounded-lg w-2/3">
+              <h3 className = "text-xs font-bold">Nome do Aluno</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores provident tenetur deleniti at reiciendis aperiam fugit esse odit impedit! Iusto recusandae vero culpa odit ut quam aliquam modi dolores veritatis.</p>
+            </div>
+
+            <div className = " m-auto mt-10 bg-green-500 rounded-lg w-2/3">
+              <h3 className = "text-xs font-bold">Nome do Aluno</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores provident tenetur deleniti at reiciendis aperiam fugit esse odit impedit! Iusto recusandae vero culpa odit ut quam aliquam modi dolores veritatis.</p>
+            </div>
+
           </div>
 
         </div>
