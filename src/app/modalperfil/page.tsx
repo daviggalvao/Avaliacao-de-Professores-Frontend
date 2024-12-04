@@ -3,17 +3,14 @@
 import Image from "next/image";
 import '../styles/globals.css';
 import styles from '../styles/login.module.css';
-import stylespfp from '../styles/regpfp.module.css';
 import stylesmp from '../styles/modalp.module.css';
 
 export default function Home() {
   return (
-
-
-      <div className = {styles.metadedir}>
-
-      <Image src="https://th.bing.com/th/id/OIP.hcRhDT8KVqzySjYJmBhlzgHaHa?rs=1&pid=ImgDetMain" 
-      alt = "Foto de perfil não cadastrada" className = {stylespfp.pfp} width={100} height ={100}/>
+      <div className = {stylesmp.mid}>
+      
+          <Image src="https://th.bing.com/th/id/OIP.hcRhDT8KVqzySjYJmBhlzgHaHa?rs=1&pid=ImgDetMain" 
+          alt = "Foto de perfil não cadastrada" className = {stylesmp.fp} width={100} height ={100}/>
           
           <form>
               <label htmlFor="nome"></label><br/>
