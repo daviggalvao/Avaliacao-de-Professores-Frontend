@@ -11,8 +11,18 @@ export default function Home() {
       <div className={stylesmc.d}>
         <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Comentar</button>
         {open ? (
-            <div>
-                
+            <div className={stylesmc.modal}>
+              <br />
+                <div className={stylesmc.caixam}>
+                  <div className={stylesmc.caixamn}>
+                    <br />
+                    <div className={stylesmc.reta}></div>
+                  </div>
+                  <div className={stylesmc.space}>
+                    <button className = {stylesmc.buttonc}>Comentar</button>
+                    <button className = {stylesmc.buttonc}>Sair</button>
+                  </div>
+                </div>
             </div>
         ) : (<div className={stylesmc.hide}></div>)}
       </div>

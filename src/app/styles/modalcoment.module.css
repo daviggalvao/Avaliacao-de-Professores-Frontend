@@ -1,3 +1,45 @@
+.caixam {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 500px;
+    width: 900px;
+    gap: 0.5rem;
+    background-color: #001830;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin-inline: 1rem;
+    position: relative;
+    margin: auto; 
+}
+
+.caixamn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 390px;
+    width: 800px;
+    background-color: #27bd80;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin-inline: 1rem;
+    position: relative;
+    margin: auto; 
+}
+
+.space {
+    display: flex;
+    flex-direction: row;
+}
+
+.reta {
+    height: 2px;
+    width: 800px;
+    background-color: #001830;
+}
+
 .hide {
     display: hidden;
 }
