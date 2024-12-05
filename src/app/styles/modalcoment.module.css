@@ -18,7 +18,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
     height: 390px;
     width: 800px;
     background-color: #27bd80;
@@ -32,6 +31,12 @@
 .space {
     display: flex;
     flex-direction: row;
+}
+
+.coment {
+    background-color: #27bd80;
+    border: none;
+    padding: 12px;
 }
 
 .reta {

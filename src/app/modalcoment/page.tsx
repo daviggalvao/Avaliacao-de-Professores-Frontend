@@ -17,6 +17,7 @@ export default function Home() {
                   <div className={stylesmc.caixamn}>
                     <br />
                     <div className={stylesmc.reta}></div>
+                    <input className={stylesmc.coment} type="text" id="comment"/>
                   </div>
                   <div className={stylesmc.space}>
                     <button className = {stylesmc.buttonc}>Comentar</button>
