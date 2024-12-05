@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import '../styles/globals.css';
-import stylesmc from '../styles/modalcoment.module.css';
+import stylesmc from '../styles/modal.module.css';
 
 export default function Home() {
   const [open, setOpen] = useState(false);

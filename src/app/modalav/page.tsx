@@ -8,18 +8,28 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   return (
       <div className={stylesmc.d}>
-        <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Comentar</button>
+        <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Avaliar</button>
         {open ? (
             <div className={stylesmc.modal}>
               <br />
                 <div className={stylesmc.caixam}>
+                  <div>
+                    <form>
+                      <select name="professor" id="professor" className={stylesmc.input}>
+                        <option value="" disabled selected>Nome do Professor</option>
+                      </select>
+                      <select name="disciplina" id="disciplina" placeholder="Disciplina" className={stylesmc.input}>
+                        <option value="" disabled selected>Disciplina</option>
+                      </select>
+                    </form>
+                  </div>
                   <div className={stylesmc.caixamn}>
                     <br />
                     <div className={stylesmc.reta}></div>
                     <input className={stylesmc.coment} type="text" id="comment"/>
                   </div>
                   <div className={stylesmc.space}>
-                    <button className = {stylesmc.buttonc}>Comentar</button>
+                    <button className = {stylesmc.buttonc}>Avaliar</button>
                     <div className={stylesmc.spacei1}>
                       <button onClick={() => setOpen(!open)} className = {stylesmc.buttonc}>Sair</button>
                     </div>
