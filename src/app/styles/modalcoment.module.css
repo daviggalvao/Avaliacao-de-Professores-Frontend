@@ -33,6 +33,10 @@
     flex-direction: row;
 }
 
+.spacei {
+    margin-left: 14rem;
+}
+
 .coment {
     background-color: #27bd80;
     border: none;

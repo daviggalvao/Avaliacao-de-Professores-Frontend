@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from "next/image";
 import '../styles/globals.css';
 import stylesmc from '../styles/modalcoment.module.css';
 
@@ -22,6 +21,9 @@ export default function Home() {
                   <div className={stylesmc.space}>
                     <button className = {stylesmc.buttonc}>Comentar</button>
                     <button onClick={() => setOpen(!open)} className = {stylesmc.buttonc}>Sair</button>
+                    <div className={stylesmc.spacei}>
+                        <button className = {stylesmc.buttonc}>Apagar</button>
+                    </div>
                   </div>
                 </div>
             </div>
