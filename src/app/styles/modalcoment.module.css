@@ -1,0 +1,33 @@
+.hide {
+    display: hidden;
+}
+
+.d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal { 
+    position: fixed; 
+    width: 100vw; 
+    height: 100vw; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    overflow: scroll; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.buttonc {
+    width: 150px;
+    height: 60px;
+    background-color: #27bd80;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin-inline: 1rem;
+    position: relative;
+}

@@ -1,12 +1,23 @@
 .m {
     --tw-bg-opacity: 1;
-    background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1)) /* #dcfce7 */;
+    background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
     height: 100vw;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-direction: column;
     align-items: center;
+}
+
+.modal { 
+  position: fixed; 
+  width: 100vw; 
+  height: 100vw; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  overflow: scroll; 
+  background-color: rgba(0,0,0,0.4); 
 }
 
 .d {
@@ -17,12 +28,19 @@
     gap: 0.5rem;
 }
 
+.close {
+  color: #aaa;
+  justify-content: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .buttonm {
     width: 400px;
     height: 40px;
     background-color: #ffffff;
     color: #282828;
-    padding: 25px;
+    padding: 23px;
     border-radius: 20px;
     margin-bottom: 1rem;
     text-align: center;
@@ -36,25 +54,25 @@
     border-radius: 50%;
   }
 
-  .mid {
-    width: 500px;
-    height: 690px;
-    flex: 0.5;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    margin: auto;
-    background-color: #001830;
-  }
+.mid {
+  width: 500px;
+  height: 690px;
+  flex: 0.5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  background-color: #001830;
+}
 
 .hide {
     display: hidden;
 }
 
 .buttonc {
-    width: 150px;
+    width: 150px;2
     height: 60px;
     background-color: #27bd80;
     color: #ffffff;
@@ -62,7 +80,6 @@
     border-radius: 20px;
     margin-inline: 1rem;
     position: relative;
-    
 }
 
 .buttonc:hover{
