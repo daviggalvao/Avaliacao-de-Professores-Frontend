@@ -10,14 +10,12 @@ export default function Home() {
       <div className={stylesmc.d}>
         <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Comentar</button>
         {open ? (
-            <div className={stylesmc.modal}>
+            <div className={`h-full w-full bg-black/40 fixed top-0 left-0 transition-all ${open? "opacity-100" : "opacity-0"}`}>
               <br />
                 <div className={stylesmc.caixam}>
-                  <div className={stylesmc.caixamn}>
-                    <br />
-                    <div className={stylesmc.reta}></div>
-                    <input className={stylesmc.coment} type="text" id="comment"/>
-                  </div>
+                  <div className="flex-1 outline-none w-full text-start flex text-wrap rounded-3xl">
+                      <textarea className="outline-none bg-foreground resize-none w-full" id="comment"/>
+                    </div>
                   <div className={stylesmc.space}>
                     <button className = {stylesmc.buttonc}>Comentar</button>
                     <div className={stylesmc.spacei1}>

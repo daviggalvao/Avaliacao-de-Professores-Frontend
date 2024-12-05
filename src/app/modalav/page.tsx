@@ -10,7 +10,7 @@ export default function Home() {
       <div className={stylesmc.d}>
         <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Avaliar</button>
         {open ? (
-            <div className={stylesmc.modal}>
+            <div className={`h-full w-full bg-black/40 fixed top-0 left-0 transition-all ${open? "opacity-100" : "opacity-0"}`}>
               <br />
                 <div className={stylesmc.caixam}>
                   <div>
@@ -18,15 +18,16 @@ export default function Home() {
                       <select name="professor" id="professor" className={stylesmc.input}>
                         <option value="" disabled selected>Nome do Professor</option>
                       </select>
-                      <select name="disciplina" id="disciplina" placeholder="Disciplina" className={stylesmc.input}>
-                        <option value="" disabled selected>Disciplina</option>
+                      <select name="disciplina" id="disciplina" className={stylesmc.input}>
+                        <option value="Disciplina" className="" disabled selected>Disciplina</option>
                       </select>
                     </form>
                   </div>
-                  <div className={stylesmc.caixamn}>
-                    <br />
-                    <div className={stylesmc.reta}></div>
-                    <input className={stylesmc.coment} type="text" id="comment"/>
+                  <div className="bg-foreground flex flex-col items-center justify-center rounded-md h-4/5 w-11/12">
+                    <div className="w-full h-[2px] bg-background mt-10"></div>
+                    <div className="flex-1 outline-none w-full text-start flex text-wrap rounded-3xl">
+                      <textarea className="outline-none bg-foreground resize-none w-full" id="comment"/>
+                    </div>
                   </div>
                   <div className={stylesmc.space}>
                     <button className = {stylesmc.buttonc}>Avaliar</button>
