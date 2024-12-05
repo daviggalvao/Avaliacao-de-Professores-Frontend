@@ -20,9 +20,9 @@ export default function Home() {
                   </div>
                   <div className={stylesmc.space}>
                     <button className = {stylesmc.buttonc}>Comentar</button>
-                    <button onClick={() => setOpen(!open)} className = {stylesmc.buttonc}>Sair</button>
+                    <button onClick={() => setOpen(!open)} className = {stylesmc.buttonc}>Apagar</button>
                     <div className={stylesmc.spacei}>
-                        <button className = {stylesmc.buttonc}>Apagar</button>
+                        <button onClick={() => setOpen(!open)} className = {stylesmc.buttonc}>Sair</button>
                     </div>
                   </div>
                 </div>
