@@ -18,6 +18,7 @@ export default function Home() {
                     <div className="flex-1 outline-none w-full text-start flex text-wrap rounded-3xl">
                       <textarea className="outline-none bg-foreground resize-none w-full" id="comment"/>
                     </div>
+                    <br />
                   </div>
                   <div className={stylesmc.space}>
                     <button className = {stylesmc.buttonc}>Comentar</button>

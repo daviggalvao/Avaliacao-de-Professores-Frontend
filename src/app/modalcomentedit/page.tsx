@@ -8,7 +8,7 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   return (
       <div className={stylesmc.d}>
-        <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Comentar</button>
+        <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Editar</button>
         {open ? (
             <div className={`h-full w-full bg-black/40 fixed top-0 left-0 transition-all ${open? "opacity-100" : "opacity-0"}`}>
               <br />
@@ -18,6 +18,7 @@ export default function Home() {
                     <div className="flex-1 outline-none w-full text-start flex text-wrap rounded-3xl">
                       <textarea className="outline-none bg-foreground resize-none w-full" id="comment"/>
                     </div>
+                    <br />
                   </div>
                   <div className={stylesmc.space}>
                     <button className = {stylesmc.buttonc}>Comentar</button>
