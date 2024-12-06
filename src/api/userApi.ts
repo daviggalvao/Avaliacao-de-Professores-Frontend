@@ -1,20 +1,24 @@
 import api from '../utils/api';
-import { User } from '../types/User';
+import { CreateUser } from '../types/User';
+import { UpdateUser } from '../types/User';
 
-const postUser = async (dados: User) => {
+
+const postUser = async (dados: CreateUser) => {
     const response = await api.post('/user', dados)
     return response.data
 }
 
 const getAllUsers = async () => {
-    await api.get('/user')
+    const response = await api.get('/user')
+    return response.data
 }
 
 const getUser = async (id: number) => {
-    await api.get(`/user/${id}`)
+    const response = await api.get(`/user/${id}`)
+    return response.data
 }
 
-const updateUser = async (id: number, dados: User) => {
+const updateUser = async (id: number, dados: UpdateUser) => {
     const response = await api.patch(`/user/${id}`, dados)
     return response.data
 }

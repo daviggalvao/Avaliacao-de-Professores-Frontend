@@ -1,20 +1,23 @@
 import api from '../utils/api';
-import { Avaliacao } from '../types/Avaliacao';
+import { CreateAvaliacao } from '../types/Avaliacao';
+import { UpdateAvaliacao } from '../types/Avaliacao';
 
-const postAvaliacao = async (dados: Avaliacao) => {
+const postAvaliacao = async (dados: CreateAvaliacao) => {
     const response = await api.post('/avaliacao', dados)
     return response.data
 }
 
 const getAllAvaliacoes = async () => {
-    await api.get('/avaliacao')
+    const response = await api.get('/avaliacao')
+    return response.data
 }
 
 const getAvaliacao = async (id: number) => {
-    await api.get(`/avaliacao/${id}`)
+    const response = await api.get(`/avaliacao/${id}`)
+    return response.data
 }
 
-const updateAvaliacao = async (id: number, dados: Avaliacao) => {
+const updateAvaliacao = async (id: number, dados: UpdateAvaliacao) => {
     const response = await api.patch(`/avaliacao/${id}`, dados)
     return response.data
 }
