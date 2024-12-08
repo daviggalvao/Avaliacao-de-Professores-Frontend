@@ -1,6 +1,6 @@
-import api from '../utils/api';
-import { CreateProfessor } from '../types/Professor';
-import { UpdateProfessor } from '../types/Professor';
+import api from '../../utils/api';
+import { CreateProfessor } from '../../types/Professor';
+import { UpdateProfessor } from '../../types/Professor';
 
 const postProfessor = async (dados: CreateProfessor) => {
     const response = await api.post('/professor', dados)

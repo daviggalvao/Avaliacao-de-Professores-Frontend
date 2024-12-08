@@ -1,6 +1,6 @@
-import api from '../utils/api';
-import { CreateAvaliacao } from '../types/Avaliacao';
-import { UpdateAvaliacao } from '../types/Avaliacao';
+import api from '../../utils/api';
+import { CreateAvaliacao } from '../../types/Avaliacao';
+import { UpdateAvaliacao } from '../../types/Avaliacao';
 
 const postAvaliacao = async (dados: CreateAvaliacao) => {
     const response = await api.post('/avaliacao', dados)

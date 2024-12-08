@@ -1,6 +1,6 @@
-import api from '../utils/api';
-import { CreateComentario } from '../types/Comentario';
-import { UpdateComentario } from '../types/Comentario';
+import api from '../../utils/api';
+import { CreateComentario } from '../../types/Comentario';
+import { UpdateComentario } from '../../types/Comentario';
 
 const postComentario = async (dados: CreateComentario) => {
     const response = await api.post('/comentario', dados)

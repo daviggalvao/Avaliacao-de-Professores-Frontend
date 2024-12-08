@@ -1,6 +1,6 @@
-import api from '../utils/api';
-import { CreateUser } from '../types/User';
-import { UpdateUser } from '../types/User';
+import api from '../../utils/api';
+import { CreateUser } from '../../types/User';
+import { UpdateUser } from '../../types/User';
 
 
 const postUser = async (dados: CreateUser) => {

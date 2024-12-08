@@ -1,6 +1,6 @@
-import api from '../utils/api';
-import { CreateDisciplina } from '../types/Disciplina';
-import { UpdateDisciplina } from '../types/Disciplina';
+import api from '../../utils/api';
+import { CreateDisciplina } from '../../types/Disciplina';
+import { UpdateDisciplina } from '../../types/Disciplina';
 
 const postDisciplina = async (dados: CreateDisciplina) => {
     const response = await api.post('/disciplina', dados)
