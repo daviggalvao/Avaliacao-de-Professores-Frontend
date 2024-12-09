@@ -7,7 +7,7 @@ import stylesmc from '../styles/modal.module.css';
 export default function Home() {
   const [open, setOpen] = useState(false);
   return (
-      <div className={stylesmc.d}>
+      <div className="flex justify-center items-center flex-col gap-2">
         <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Avaliar</button>
         {open ? (
             <div className={`h-full w-full bg-black/40 fixed top-0 left-0 transition-all ${open? "opacity-100" : "opacity-0"}`}>
@@ -15,10 +15,10 @@ export default function Home() {
                 <div className={stylesmc.caixam}>
                   <div>
                     <form>
-                      <select name="professor" id="professor" className={stylesmc.input}>
+                      <select name="professor" id="professor" className="flex flex-col justify-center bg-white relative p-4 mb-4 text-center rounded-3xl">
                         <option value="" disabled selected>Nome do Professor</option>
                       </select>
-                      <select name="disciplina" id="disciplina" className={stylesmc.input}>
+                      <select name="disciplina" id="disciplina" className="flex flex-col justify-center bg-white relative p-4 mb-4 text-center rounded-3xl ">
                         <option value="Disciplina" className="" disabled selected>Disciplina</option>
                       </select>
                     </form>
@@ -38,7 +38,7 @@ export default function Home() {
                   </div>
                 </div>
             </div>
-        ) : (<div className={stylesmc.hide}></div>)}
+        ) : (<div className="hidden")>vasco</div>}
       </div>
   );
 }
