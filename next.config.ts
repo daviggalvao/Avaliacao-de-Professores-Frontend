@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
       domains: [
         'plus.unsplash.com',
         'th.bing.com',
-        'upload.wikimedia.org',
         'static.wikia.nocookie.net',
       ],
     }
