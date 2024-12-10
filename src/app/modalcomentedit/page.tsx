@@ -8,7 +8,7 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   return (
       <div className={stylesmc.d}>
-        <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Editar</button>
+        <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>&#x270E; Editar</button>
         {open ? (
             <div className={`h-full w-full bg-black/40 fixed top-0 left-0 transition-all ${open? "opacity-100" : "opacity-0"}`}>
               <br />
