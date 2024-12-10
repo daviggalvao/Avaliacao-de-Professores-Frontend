@@ -3,23 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import '../styles/globals.css';
-import styles from '../styles/feed.module.css';
+import HeaderDeslogado from "@/components/Header";
 
 export default function Home() {
   return (
   <div>
-      <div className = {styles.topo}>
-          <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
-          alt = "Logo UNB" className = {styles.logo} width={50} height={50}/>
+      <HeaderDeslogado/>
 
-          <Link href = "/feed">
-            <button className = " bg-green-500 w-40 border border-black rounded mt-8">voltar</button>
-            </Link>
-
-          <Link href = "">
-            <button className = {styles.loginbutton}>Login</button>
-          </Link>
-
+      <div className="flex justify-center items-center">
+        <Link href="/">
+          <button className="bg-green-500 w-40 border border-black rounded mt-2 mb-2">Voltar</button>
+        </Link>
       </div>
 
       <div className = "flex justify-center items-center h-screen bg-white">

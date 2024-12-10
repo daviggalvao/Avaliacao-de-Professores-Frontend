@@ -1,41 +1,100 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
 import './styles/globals.css';
-import styles from './styles/login.module.css';
-
+import styles from './styles/feed.module.css';
+import HeaderDeslogado from "@/components/Header";
 
 export default function Home() {
   return (
-  <div className = {styles.janela}>
-    <Image src="https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-      alt = "Grupo de estudantes em uma roda" className = {styles.metadeesq} width={500} height ={500}/>
+  <div>
+     <HeaderDeslogado/>
 
-      <div className = {styles.metadedir}>
-        <br/>
-        <br/>
-        <h1 className= {styles.title}>Avaliação de Professores</h1>
-        <form>
-          <br/>
-          <br/>
-            <label htmlFor="email"></label><br/>
-            <input className = {styles.buttonf} type="email" id="email" name="email" placeholder = "Email"/>
-            <label htmlFor="senha"></label><br/>
-            <input className = {styles.buttonf} type="password" id="senha" name="senha" placeholder = "Senha"/>
-        </form> 
+      <div className = {styles.feedbody}>
 
-        <div className="">
-          <Link href = "/feed">
-            <button className = {styles.buttonc} >Entrar </button>
-          </Link>
-          <Link href = "/register">
-            <button className = {styles.buttonc} >Criar Conta</button>
-          </Link>
-          
+        <div className = {styles.searchboxjan}>
+          <input type="text" placeholder="Buscar Professor(a)" className={styles.searchbox}></input>
         </div>
 
+        <h1 className = {styles.title}>Novos Professores</h1>
+        
+        <section className = {styles.secaoprof}>
+          
+          <div className = {styles.moldeprof}>
+           <Image src = "logounb.svg"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor1</h2>
+            <p>disciplina</p>
+          </div>
+
+          <div className = {styles.moldeprof}>    
+            <Image src = "logounb.svg"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor2</h2>
+            <p>disciplina</p>
+          </div>
+
+          <div className = {styles.moldeprof}>    
+            <Image src = "logounb.svg"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor3</h2>
+            <p>disciplina</p>
+          </div>
+
+          <div className = {styles.moldeprof}>
+            <Image src = "logounb.svg"
+            alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+            <h2>professor4</h2>
+            <p>disciplina</p>
+          </div>
+          
+        </section>
+        
+        <div className= "flex justify-between items-center max-w-screen-lg">
+          <h1 className = {styles.title}>Todos os Professores</h1>
+          <button className = "bg-blue-400 text-white rounded">Nova Publicação</button>
+        </div>
+
+        <section className = {styles.secaoprof}>
+          <div className = {styles.moldeprof}>
+              <Image src = "logounb.svg"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor1</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>    
+              <Image src = "logounb.svg"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor2</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>    
+              <Image src = "logounb.svg"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor3</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>
+              <Image src = "logounb.svg"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor4</h2>
+              <p>disciplina</p>
+            </div>
+
+            <div className = {styles.moldeprof}>
+              <Image src = "logounb.svg"
+              alt = "Imagem prof" className = {styles.imagemprof} width={50} height={50}/>
+              <h2>professor5</h2>
+              <p>disciplina</p>
+            </div>
+          
+        </section>  
+
       </div>
+
   </div>
 
   );
