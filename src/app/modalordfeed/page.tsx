@@ -2,16 +2,30 @@
 
 import { useState } from 'react';
 import '../styles/globals.css';
-import stylesmc from '../styles/modal.module.css';
 
 export default function Home() {
   const [open, setOpen] = useState(false);
   return (
-      <div>
-        <button onClick={() => setOpen(!open)} className={stylesmc.buttonc}>Ordenar</button>
+      <div className="flex flex-col justify-center items-center gap-2">
+        <br />
+        <button onClick={() => setOpen(!open)} className="p-2 rounded-2xl bg-foreground h-1/6 w-1/12">Ordenar</button>
         {open ? (
-            <div className="h-1/100 w-1/100 fixed">
-                <div className="">Vasco</div>
+            <div className="bg-background rounded-2xl h-1/6 w-1/6 p-2 flex flex-col justify-center items-center">
+                <div className="bg-foreground rounded-2xl h-full w-full p-2 flex flex-col justify-center items-center">
+                    <button className="text-white">Nome</button>
+                </div>
+                <br />
+                <div className="bg-foreground rounded-2xl h-full w-full p-2 flex flex-col justify-center items-center">
+                    <button className="text-white">Matéria</button>
+                </div>
+                <br />
+                <div className="bg-foreground rounded-2xl h-full w-full p-2 flex flex-col justify-center items-center">
+                    <button className="text-white">Recentes</button>
+                </div>
+                <br />
+                <div className="bg-foreground rounded-2xl h-full w-full p-2 flex flex-col justify-center items-center">
+                    <button className="text-white">Antigas</button>
+                </div>
             </div>
         ) : (<div className="hidden"></div>)}
       </div>
