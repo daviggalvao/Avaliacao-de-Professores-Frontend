@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import '../styles/globals.css';
-import HeaderDeslogado from "@/components/Header";
+import HeaderDeslogado from "@/components/HeaderDeslogado";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className = "flex justify-center items-center h-screen bg-white">
+      <div className = "flex justify-center items-center min-h-screen bg-white border">
 
         <div className = "bg-white w-1/4 h-full border-2 border-green-600">
 

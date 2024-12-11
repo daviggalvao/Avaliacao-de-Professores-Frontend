@@ -3,7 +3,7 @@
 import Image from "next/image";
 import './styles/globals.css';
 import styles from './styles/feed.module.css';
-import HeaderDeslogado from "@/components/Header";
+import HeaderDeslogado from "@/components/HeaderDeslogado";
 
 export default function Home() {
   return (
