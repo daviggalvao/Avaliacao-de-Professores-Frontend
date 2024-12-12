@@ -1,42 +1,57 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import '../styles/globals.css';
-import styles from '../styles/login.module.css';
-
+import "../styles/globals.css";
 
 export default function Home() {
   return (
-  <div className = {styles.janela}>
-    <Image src="https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-      alt = "Grupo de estudantes em uma roda" className = {styles.metadeesq} width={500} height ={500}/>
-
-      <div className = {styles.metadedir}>
-        <br/>
-        <br/>
-        <h1 className= {styles.title}>Avaliação de Professores</h1>
-        <form>
-          <br/>
-          <br/>
-            <label htmlFor="email"></label><br/>
-            <input className = {styles.buttonf} type="email" id="email" name="email" placeholder = "Email"/>
-            <label htmlFor="senha"></label><br/>
-            <input className = {styles.buttonf} type="password" id="senha" name="senha" placeholder = "Senha"/>
-        </form> 
-
-        <div className="">
-          <Link href = "/">
-            <button className = {styles.buttonc} >Entrar </button>
-          </Link>
-          <Link href = "/register">
-            <button className = {styles.buttonc} >Criar Conta</button>
-          </Link>
-          
-        </div>
-
+    <div className="flex h-screen">
+      <div className="bg-foreground flex flex-col justify-center items-center">
+        <Image
+          src="logounb.svg"
+          alt="Logo UnB"
+          className="flex basis-2/4 h-1/2 w-1/3"
+          width={10}
+          height={10}
+        />
       </div>
-  </div>
+      <div className="flex basis-2/4 flex-col justify-center items-center bg-background">
+        <h1 className="text-center text-white text-7xl font-bold">Avalia aê</h1>
+        <form className="text-black w-3/5 my-4">
+          <label htmlFor="email"></label>
+          <br />
+          <input
+            className="text-center relative w-full mb-3 p-5 rounded-3xl"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+          />
+          <label htmlFor="senha"></label>
+          <br />
+          <input
+            className="text-center relative w-full mb-3 p-5 rounded-3xl"
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+          />
+        </form>
 
+        <div className="flex space-x-4">
+          <Link href="../">
+            <button className="text-center bg-foreground text-white p-5 rounded-2xl">
+              Fazer Login
+            </button>
+          </Link>
+          <Link href="/register">
+            <button className="text-center bg-foreground text-white p-5 rounded-2xl">
+              Criar Conta
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

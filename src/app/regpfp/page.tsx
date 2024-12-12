@@ -1,42 +1,44 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import '../styles/globals.css';
-import styles from '../styles/login.module.css';
-import stylespfp from '../styles/regpfp.module.css';
 
 export default function Home() {
   return (
-  <div className = {styles.janela}>
-    <Image src="https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-      alt = "Grupo de estudantes em uma roda" className = {styles.metadeesq} width={500} height ={500}/>
+  <div className="flex h-screen">
+    <div className="bg-foreground flex flex-col justify-center items-center">
+      <Image src = "logounb.svg" alt = "Logo UnB" className="flex basis-2/4 h-1/2 w-1/3" width={100} height ={100}/>
+    </div>
 
-      <div className = {styles.metadedir}>
+    <div className="flex basis-2/4 flex-col justify-center items-center bg-background">
 
-      <Image src="https://th.bing.com/th/id/OIP.hcRhDT8KVqzySjYJmBhlzgHaHa?rs=1&pid=ImgDetMain" 
-      alt = "Foto de perfil não cadastrada" className = {stylespfp.pfp} width={100} height ={100}/>
+          <Image src="perfil.svg" 
+          alt = "Foto de perfil não cadastrada" className="rounded-full"width={100} height ={100}/>
           
-          <form>
+          <form className="text-black w-3/5 my-4">
               <label htmlFor="email"></label><br/>
-              <input className = {styles.buttonf} type="email" id="email" name="email" placeholder = "Email"/>
+              <input className = "text-center relative w-full mb-3 p-5 rounded-3xl" type="email" id="email" name="email" placeholder = "Email"/>
 
               <label htmlFor="senha"></label><br/>
-              <input className = {styles.buttonf} type="password" id="senha" name="senha" placeholder = "Senha"/>
+              <input className = "text-center relative w-full mb-3 p-5 rounded-3xl" type="password" id="senha" name="senha" placeholder = "Senha"/>
 
               <label htmlFor="nome"></label><br/>
-              <input className = {styles.buttonf} type="name" id="nome" name="nome" placeholder = "Nome"/>
+              <input className = "text-center relative w-full mb-3 p-5 rounded-3xl" type="name" id="nome" name="nome" placeholder = "Nome"/>
 
               <label htmlFor="curso"></label><br/>
-              <input className = {styles.buttonf} type="name" id="curso" name="curso" placeholder = "Curso"/>
+              <input className = "text-center relative w-full mb-3 p-5 rounded-3xl" type="name" id="curso" name="curso" placeholder = "Curso"/>
 
               <label htmlFor="departamento"></label><br/>
-              <input className = {styles.buttonf} type="name" id="departamento" name="departamento" placeholder = "Departamento"/>
-
+              <input className = "text-center relative w-full p-5 rounded-3xl" type="name" id="departamento" name="departamento" placeholder = "Departamento"/>
           </form> 
 
-          <div className="py-8 px-8 max-w-sm mx-auto space-y-2 bg-white rounded-xl shadow-lg sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:gap-x-6">
-            <button className = {styles.buttonc}>Criar Conta</button>
-          </div>
+          <Link href="/login">
+            <button className="text-center bg-foreground text-white p-5 rounded-2xl">
+              Criar Conta
+            </button>
+        </Link>
+          
         </div>
   </div>
 
