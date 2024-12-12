@@ -14,7 +14,7 @@ export default function Home() {
     <div className="flex basis-2/4 flex-col justify-center items-center bg-background">
 
           <Image src="perfil.svg" 
-          alt = "Foto de perfil não cadastrada" className="rounded-full"width={100} height ={100}/>
+          alt = "Foto de perfil não cadastrada" className="rounded-full cursor-pointer" width={100} height ={100}/>
           
           <form className="text-black w-3/5 my-4">
               <label htmlFor="email"></label><br/>

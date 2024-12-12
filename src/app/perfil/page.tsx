@@ -1,66 +1,49 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import '../styles/globals.css';
+import Head from "next/head";
+import "../styles/globals.css";
 import HeaderDeslogado from "@/components/HeaderDeslogado";
+import Coment from "@/components/Coment";
 
 export default function Home() {
   return (
-  <div>
-      <HeaderDeslogado/>
+    <div>
+      <HeaderDeslogado />
 
-      <div className="flex justify-center items-center">
+      <div className="flex flex-col justify-center items-center min-h-screen bg-white">
         <Link href="/">
-          <button className="bg-green-500 w-40 border border-black rounded mt-2 mb-2">Voltar</button>
+          <button className="absolute bg-foreground p-1 mt-4 ml-52 flex justify-center items-center w-28 rounded-xl">Sair</button>
         </Link>
-      </div>
 
-      <div className = "flex justify-center items-center min-h-screen bg-white border">
+        <div className="bg-white w-1/2 h-full border-2 border-foreground ">
+          <div className="bg-white-100 w-full h-1/4 border-b-2 border-foreground">
+            <Image
+              src="perfil.svg"
+              alt="Foto de Perfil"
+              width={25}
+              height={25}
+              className="w-32 h-32 border border-background rounded-full ml-16 mt-8"
+            />
 
-        <div className = "bg-white w-1/4 h-full border-2 border-green-600">
+            <h1 className="text-xl font-bold mt-2 ml-16">Nome do aluno</h1>
 
-          <div className = "bg-white-100 w-full h-1/4 border-b-2 border-green-600">
+            <h2 className="text-xs ml-16">Ciência da Computação</h2>
 
-            <Image 
-              src="morty.svg"
-              alt = "Morty" width={25} height={25} className= "w-32 h-32 border border-black rounded-full ml-16 mt-8"
-              />
-
-            <h1 className = "text-xl font-bold ml-16">Nome do aluno</h1>
-
-            <h2 className = "text-xs ml-16">Curso do aluno</h2>
-
-            <h2 className = "text-xs ml-16">Email do aluno</h2>
+            <h2 className="text-xs ml-16">aluno123@gmail.com</h2>
+            <br />
           </div>
 
-          <div className = "flex-col items-center justify-center">
-            <h1 className = "text-xl font-bold ml-4 mt-4" >Publicações</h1>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-xl font-bold">Publicações</h1>
 
-            <div className = " m-auto mt-10 bg-green-500 rounded-lg w-2/3">
-              <h3 className = "text-xs font-bold">Nome do Aluno</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores provident tenetur deleniti at reiciendis aperiam fugit esse odit impedit! Iusto recusandae vero culpa odit ut quam aliquam modi dolores veritatis.</p>
-            </div>
-
-            <div className = " m-auto mt-10 bg-green-500 rounded-lg w-2/3">
-              <h3 className = "text-xs font-bold">Nome do Aluno</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores provident tenetur deleniti at reiciendis aperiam fugit esse odit impedit! Iusto recusandae vero culpa odit ut quam aliquam modi dolores veritatis.</p>
-            </div>
-
-            <div className = " m-auto mt-10 bg-green-500 rounded-lg w-2/3">
-              <h3 className = "text-xs font-bold">Nome do Aluno</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores provident tenetur deleniti at reiciendis aperiam fugit esse odit impedit! Iusto recusandae vero culpa odit ut quam aliquam modi dolores veritatis.</p>
-            </div>
-
+            <Coment name={"Nome"}></Coment>
+            <Coment name={"Nome"}></Coment>
+            <Coment name={"Nome"}></Coment>
           </div>
-
         </div>
-
-      
       </div>
-    
-
-  </div>
-
+    </div>
   );
 }
