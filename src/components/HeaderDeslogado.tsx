@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../app/styles/feed.module.css'
 
 const HeaderDeslogado = () => {
   return (

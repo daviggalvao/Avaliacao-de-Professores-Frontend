@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 import "../styles/globals.css";
 import HeaderDeslogado from "@/components/HeaderDeslogado";
+import HeaderLogado from "@/components/HeaderLogado";
 import Coment from "@/components/Coment";
 
 export default function Home() {

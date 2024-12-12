@@ -3,6 +3,7 @@
 import Image from "next/image";
 import "./styles/globals.css";
 import HeaderDeslogado from "@/components/HeaderDeslogado";
+import HeaderLogado from "@/components/HeaderLogado";
 import Teacher from "@/components/Teacher";
 import Sort from "@/components/Sort";
 
