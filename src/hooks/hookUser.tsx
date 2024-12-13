@@ -1,7 +1,7 @@
 import { useParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { getUser } from '../app/_api/userApi';
+import { getUser, getAllUsers } from '../app/_api/userApi';
 import { UserData } from '../types/User';
 
 export function hookUser() {
@@ -30,4 +30,17 @@ export function hookUser() {
   }, [id, router]);
 
   return user;
+}
+
+export function hookAllUsers() {
+  const [users, setUsers] = useState<UserData[]>([]);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const users = await getAllUsers();
+      setUsers(users);
+    };
+    fetchUser();
+  }, []);
+  return users;
 }

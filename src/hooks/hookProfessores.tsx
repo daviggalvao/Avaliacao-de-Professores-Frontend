@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getAllProfessores } from '../app/_api/professorApi';
 import { ProfessorData } from '../types/Professor';
 
-export function useProfessores() {
+export function hookAllProfessores() {
   const [professores, setProfessores] = useState<ProfessorData[]>([]);
 
   /*const getAllUsers = async () => {
