@@ -5,12 +5,12 @@ import Link from "next/link";
 import '../../aa_extra/styles/globals.css';
 import styles from '../styles/feed.module.css';
 
-import { useUser } from '@/hooks/hookUser'; 
+import { hookUser } from '@/hooks/hookUser'; 
 import Header from '@/components/Header';
 import Avaliacao from '@/components/Avaliacao'
 
 export default function PerfilAluno() {
-    const user = useUser();
+    const user = hookUser();
     
     if (!user) {
         return <p>Carregando...</p>; // Exibe algo enquanto os dados de User estão sendo carregados
@@ -18,7 +18,7 @@ export default function PerfilAluno() {
     else {
         return (
             <div>
-                <Header {...user}/>
+                <Header/>
 
                 <div className = "flex justify-center items-center h-screen bg-white">
 
@@ -39,7 +39,10 @@ export default function PerfilAluno() {
                         <div className = "flex-col items-center justify-center">
                             <h1 className = "text-xl font-bold ml-4 mt-4" >Publicações</h1>
 
-                            
+                            {user.Avaliacoes?.map((avaliacao) => (
+                                <Avaliacao key={avaliacao.id} {...avaliacao} />
+                                ))
+                            }
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,10 @@
 import { useParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getUser } from '../app/_api/userApi';
 import { UserData } from '../types/User';
-import { userAgent } from 'next/server';
 
-export function useUser() {
+export function hookUser() {
   const [user, setUser] = useState<UserData | null>(null)
 
   const { id } = useParams()

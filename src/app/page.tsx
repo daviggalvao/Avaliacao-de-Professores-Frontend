@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -14,13 +14,10 @@ export default function Home() {
   const sixMonthsAgo = new Date();
   sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
 
-  /*professores.filter((professor) => { return new Date(professor.createdAt) >= sixMonthsAgo;}).map((professor) => (<Professor key={professor.id} {...professor} />))*/
-
   return (
   <div>
-    {/* Header é onde há os botões para o perfil do usuário, caso haja um usuário, porém preciso passar alguma coisa para o Header*/}
     <div className="Header">
-      <Header {...user}/>
+      <Header/>
     </div>
 
     <div className="AreaProfessores">

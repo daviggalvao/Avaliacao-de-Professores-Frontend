@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { UserData } from '../types/User'; 
-
+import { getToken } from '../utils/auth'; 
 import Image from "next/image";
+
 import '../_modais/styles/globals.css';
 import styles from '../styles/feed.module.css';
 
-const Header = ( User : UserData) => {
+const Header = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
+  const [User, setUser] = useState<UserData | null>(null); // Dados do usuário autenticado
+
+  useEffect(() => {
+    const token = getToken(); // Verifica se existe um token
+    if (token) {
+      setIsAuthenticated(true);
+
+      // Busca os dados do usuário autenticado do localStorage
+      const userData = localStorage.getItem('user');
+      if (userData) {
+        setUser(JSON.parse(userData));
+      }
+    }
+  }, []);
+
   return (
     <div className = {styles.topo}>
 
@@ -18,20 +35,29 @@ const Header = ( User : UserData) => {
       </div>
 
       <div className="profile_content">
-        {User ? (
+        {isAuthenticated ? (
           <>
             <div className="Sininho">
 
             </div>
 
             <div className="fotoPerfil">
-              <Link href={`/users/${User.id}`}>
-                <img src={User.foto_perfil || 'src/assets/default_profile_picture.png'} alt="Foto de perfil"/>
+              <Link href={`/users/${User?.id}`}>
+                <img src={User?.foto_perfil || 'src/assets/default_profile_picture.png'} alt="Foto de perfil"/>
               </Link>
             </div>
 
             <div className="Logout">
-
+              <button 
+                onClick={() => {
+                  localStorage.removeItem('token'); // Remove token
+                  localStorage.removeItem('user');  // Remove dados do usuário
+                  setIsAuthenticated(false); // Atualiza estado
+                  setUser(null); // Remove usuário autenticado
+                }}
+              >
+                Logout
+              </button>
             </div>
           </>
         ) : (
