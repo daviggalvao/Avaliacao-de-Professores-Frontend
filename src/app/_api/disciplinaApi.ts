@@ -1,28 +1,28 @@
 import api from '../../utils/api';
-import { CreateDisciplina } from '../../types/Disciplina';
+import { DisciplinaData } from '../../types/Disciplina';
 import { UpdateDisciplina } from '../../types/Disciplina';
 
-const postDisciplina = async (dados: CreateDisciplina) => {
+export const postDisciplina = async (dados: DisciplinaData) => {
     const response = await api.post('/disciplina', dados)
     return response.data
 }
 
-const getAllDisciplinas = async () => {
+export const getAllDisciplinas = async (): Promise<DisciplinaData[]> => {
     const response = await api.get('/disciplina')
     return response.data
 }
 
-const getDisciplina = async (id: number) => {
+export const getDisciplina = async (id: number): Promise<DisciplinaData> => {
     const response = await api.get(`/disciplina/${id}`)
     return response.data
 }
 
-const updateDisciplina = async (id: number, dados: UpdateDisciplina) => {
+export const updateDisciplina = async (id: number, dados: UpdateDisciplina) => {
     const response = await api.patch(`/disciplina/${id}`, dados)
     return response.data
 }
 
-const deleteDisciplina = async (id: number) => {
+export const deleteDisciplina = async (id: number) => {
     const response = await api.delete(`/disciplina/${id}`)
     return response.data
 }

@@ -1,28 +1,28 @@
 import api from '../../utils/api';
-import { CreateComentario } from '../../types/Comentario';
+import { ComentarioData } from '../../types/Comentario';
 import { UpdateComentario } from '../../types/Comentario';
 
-const postComentario = async (dados: CreateComentario) => {
+export const postComentario = async (dados: ComentarioData) => {
     const response = await api.post('/comentario', dados)
     return response.data
 }
 
-const getAllComentarios = async () => {
+export const getAllComentarios = async (): Promise<ComentarioData[]> => {
     const response = await api.get('/comentario')
     return response.data
 }
 
-const getComentario = async (id: number) => {
+export const getComentario = async (id: number): Promise<ComentarioData> => {
     const response = await api.get(`/comentario/${id}`)
     return response.data
 }
 
-const updateComentario = async (id: number, dados: UpdateComentario) => {
+export const updateComentario = async (id: number, dados: UpdateComentario) => {
     const response = await api.patch(`/comentario/${id}`, dados)
     return response.data
 }
 
-const deleteComentario = async (id: number) => {
+export const deleteComentario = async (id: number) => {
     const response = await api.delete(`/comentario/${id}`)
     return response.data
 }
