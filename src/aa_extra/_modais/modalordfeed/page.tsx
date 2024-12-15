@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import "../styles/globals.css";
-import Coment from "@/components/Comentario";
+import Coment from "@/components/entidades/Comentario";
 
 export default function Home() {
   const [open, setOpen] = useState(false);

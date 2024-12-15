@@ -1,14 +1,14 @@
 import React from 'react'
-import { ProfessorData } from '../types/Professor'; 
+import { ProfessorData } from '../../types/Professor'; 
 import Link from "next/link";
 import Image from "next/image";
-import styles from '../styles/feed.module.css';
+import styles from '../../aa_extra/styles/feed.module.css';
 
 const Professor = ( Professor : ProfessorData) => {
   return (
     <div className = {styles.moldeprof}>
       <div className="FotoProfessor">
-        <Image src={Professor.foto_perfil || 'src/assets/default_profile_picture.png'} alt="Foto do Professor" 
+        <Image src={Professor.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto do Professor" 
         className = {styles.imagemprof} width={50} height={50}/>
       </div>
       

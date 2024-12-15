@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import '../../aa_extra/styles/globals.css';
-import styles from '../styles/feed.module.css';
+import styles from '../aa_extra/styles/feed.module.css';
 
 import { hookUser } from '@/hooks/hookUser'; 
-import Header from '@/components/Header';
-import Avaliacao from '@/components/Avaliacao'
+import Header from '@/components/layout/Header';
+import Avaliacao from '@/components/entidades/Avaliacao'
 
 export default function PerfilAluno() {
     const user = hookUser();
@@ -26,7 +25,7 @@ export default function PerfilAluno() {
 
                         <div className = "bg-white-100 w-full h-1/4 border-b-2 border-green-600">
 
-                            <Image src={user.foto_perfil || 'src/assets/default_profile_picture.png'} alt="Foto do Usuário" 
+                            <Image src={user.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto do Usuário" 
                             className= "w-32 h-32 border border-black rounded-full ml-16 mt-8"/>
 
                             <h1 className = "text-xl font-bold ml-16">{user.nome}</h1>

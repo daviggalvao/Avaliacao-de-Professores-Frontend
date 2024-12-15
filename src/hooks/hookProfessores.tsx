@@ -5,16 +5,6 @@ import { ProfessorData } from '../types/Professor';
 export function hookAllProfessores() {
   const [professores, setProfessores] = useState<ProfessorData[]>([]);
 
-  /*const getAllUsers = async () => {
-    try {
-      const users = await getAllProfessores();
-      console.log(users)
-      setProfessores(users)
-    } catch (error) {
-      
-    }
-  }*/
-
   useEffect(() => {
     const fetchProfessores = async () => {
       const data = await getAllProfessores();

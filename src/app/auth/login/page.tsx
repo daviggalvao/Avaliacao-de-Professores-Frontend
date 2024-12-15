@@ -3,23 +3,22 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import React, { useState } from 'react'
-import { authUser } from '@/app/_api/authApi';
+import { loginUser } from '@/app/_api/authApi';
 
 import Image from "next/image";
-import '../../aa_extra/styles/globals.css';
-import styles from '../styles/login.module.css';
+import '../../globals.css';
+import styles from '../../../aa_extra/styles/login.module.css';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const router = useRouter();
 
     const handleLogin = async (event: React.FormEvent) => {
       event.preventDefault(); // Evita reload da página
 
       try {
           // Chamando a função de autenticação
-          const response = await authUser(email, senha);
+          const response = await loginUser(email, senha);
           console.log('Usuário autenticado com sucesso:', response);
 
           // Salvando o token no localStorage
@@ -27,7 +26,7 @@ export default function Login() {
           localStorage.setItem('user', JSON.stringify(response.user));
 
           // Redirecionando o usuário
-          router.push('/feed');
+          window.location.href = '/'; 
       } catch (error) {
           console.error('Erro na autenticação:', error);
           alert('Email ou senha inválidos. Por favor, tente novamente.');
@@ -35,7 +34,7 @@ export default function Login() {
   };
   
     return (  
-      <div>
+      <div className = {styles.janela}>
         <Image src="https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
         alt = "Grupo de estudantes em uma roda" className = {styles.metadeesq} width={500} height ={500}/>
 
@@ -67,4 +66,3 @@ export default function Login() {
               <button className = {styles.buttonc} >Entrar </button>
             </Link>
           </div>            */
-          

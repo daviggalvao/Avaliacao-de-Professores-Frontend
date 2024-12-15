@@ -1,18 +1,18 @@
 "use client"
 
 import Image from "next/image";
-import '../../aa_extra/styles/globals.css';
-import styles from '../styles/login.module.css';
+import '../../globals.css';
+import styles from '../../../aa_extra/styles/login.module.css';
 
 import React, { useState } from 'react'
-import { postUser } from '@/app/_api/userApi';
+import { registerUser } from '@/app/_api/authApi';
 
 export default function SignIn() {
     const [input, setInput] = useState({email: "", nome: "", senha: "", curso: "", departamento: "", foto_perfil: ""})
 
     const createUser = async () => {
       try {
-        await postUser(input)
+        await registerUser(input)
       } catch (error) {
         
       }
@@ -38,9 +38,9 @@ export default function SignIn() {
             <input type="text" className='rounded-lg w-1/2 border border-black p-2' placeholder='departamento' onChange={(e) => setInput({...input, departamento: e.target.value})}/>
             
             <input type="text" className='rounded-lg w-1/2 border border-black p-2' placeholder='foto_perfil' onChange={(e) => setInput({...input, foto_perfil: e.target.value})}/>
-          </form>
           
-          <button onClick={createUser} className={styles.buttonc}>Criar Conta</button>
+            <button onClick={createUser} className={styles.buttonc}>Criar Conta</button>
+          </form>
       </div>
     );
 }

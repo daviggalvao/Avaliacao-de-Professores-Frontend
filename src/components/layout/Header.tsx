@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { UserData } from '../types/User'; 
-import { getToken } from '../utils/auth'; 
-import Image from "next/image";
+import { UserData } from '../../types/User'; 
+import { getToken } from '../../utils/auth'; 
 
-import '../_modais/styles/globals.css';
-import styles from '../styles/feed.module.css';
+import Image from "next/image";
+import logoUnb from '../../assets/logo_unb.png';  // Caminho para a imagem local
+
+import '../../app/globals.css';
+import styles from '../../aa_extra/styles/feed.module.css';
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false); 
@@ -27,8 +29,7 @@ const Header = () => {
   return (
     <div className = {styles.topo}>
 
-      <Image src = "https://upload.wikimedia.org/wikipedia/commons/1/1c/S%C3%ADmbolo_da_UnB_%28para_fundo_branco%29.png"
-      alt = "Logo UNB" className = {styles.logo} width={50} height={50}/>
+      <Image src={logoUnb}  alt="Logo UNB" className={styles.logo} width={50} height={50} />
 
       <div className = {styles.searchboxjan}>
         <input type="text" placeholder="Buscar Professor(a)" className={styles.searchbox}></input>
@@ -43,7 +44,7 @@ const Header = () => {
 
             <div className="fotoPerfil">
               <Link href={`/users/${User?.id}`}>
-                <img src={User?.foto_perfil || 'src/assets/default_profile_picture.png'} alt="Foto de perfil"/>
+                <img src={User?.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto de perfil"/>
               </Link>
             </div>
 
@@ -62,11 +63,11 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Link href = "/login">
+            <Link href = "/auth/login">
               <button className = {styles.loginbutton}>Login</button>
             </Link>
 
-            <Link href = "/sign-in">
+            <Link href = "/auth/register">
               <button className = {styles.loginbutton}>Criar Conta</button>
             </Link>
           </>

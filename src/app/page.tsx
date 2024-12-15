@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import styles from './styles/login.module.css';
+import styles from '../aa_extra/styles/login.module.css';
 
-import Professor from '../components/Professor';
+import Professor from '../components/entidades/Professor';
 import { hookAllProfessores } from '../hooks/hookProfessores'; 
 import { hookAllUsers } from '../hooks/hookUser'; 
 
-import Header from '../components/Header';
+import Header from '../components/layout/Header';
 
 export default function Home() {
   const professores = hookAllProfessores();
@@ -28,7 +28,7 @@ export default function Home() {
       <div className="TodosOsAlunos">
         <h1 className = {styles.title}>Todos os Usuários</h1>
 
-        <div className="cardsTodosProfesores">
+        <div className="TodosAlunos">
           {usuarios.length > 0 ? (
             usuarios.map((user) => (
               <h1>{user.nome}, {user.email}, {user.curso}</h1>

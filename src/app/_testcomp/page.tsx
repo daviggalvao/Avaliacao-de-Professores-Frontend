@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from "next/image";
 import React from 'react';
 import '../styles/globals.css';
-import Coment from '@/components/Comentario';
+import Coment from '@/components/entidades/Comentario';
 
 // como passar mais de um argumento na funcao
 // colocar a fotinha no lado

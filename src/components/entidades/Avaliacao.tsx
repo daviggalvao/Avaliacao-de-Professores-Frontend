@@ -1,8 +1,8 @@
 import React from 'react'
-import { AvaliacaoData } from '../types/Avaliacao'; 
+import { AvaliacaoData } from '../../types/Avaliacao'; 
 import Link from "next/link";
 import Image from "next/image";
-import styles from '../styles/feed.module.css';
+import styles from '../aa_extra/styles/feed.module.css';
 
 const Avaliacao = ( Avaliacao : AvaliacaoData) => {
   return (
