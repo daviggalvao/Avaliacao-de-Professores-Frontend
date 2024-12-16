@@ -1,5 +1,7 @@
+import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { getAllProfessores } from '../app/_api/professorApi';
+import { getAllProfessores, getProfessor } from '../app/_api/professorApi';
 import { ProfessorData } from '../types/Professor';
 
 export function hookAllProfessores() {
@@ -14,4 +16,32 @@ export function hookAllProfessores() {
   }, []);
 
   return professores;
+}
+
+export function hookProfessor() {
+  const [professor, setUser] = useState<ProfessorData | null>(null)
+  
+    const { id } = useParams()
+    const router = useRouter()
+  
+    useEffect(() => {
+  
+      if (!id || isNaN(Number(id))) {
+        return router.push('/'); 
+      }
+  
+      const fetchUser = async () => {
+        try{
+          const user = await getProfessor(Number(id));
+          setUser(user);
+        } 
+        catch (error) {
+          console.error("Erro ao buscar usuário:", error);
+          router.push('/');
+        }
+      };
+      fetchUser();
+    }, [id, router]);
+  
+    return professor;
 }

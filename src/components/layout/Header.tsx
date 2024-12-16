@@ -42,7 +42,7 @@ const Header = () => {
 
             </div>
 
-            <div className="fotoPerfil">
+            <div className="seuPerfil">
               <Link href={`/users/${User?.id}`}>
                 <img src={User?.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto de perfil"/>
               </Link>

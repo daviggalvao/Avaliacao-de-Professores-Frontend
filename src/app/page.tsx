@@ -14,8 +14,16 @@ export default function Home() {
   const professores = hookAllProfessores();
   const usuarios = hookAllUsers();
 
-  const sixMonthsAgo = new Date();
-  sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+  //const sixMonthsAgo = new Date();
+  //sixMonthsAgo.setDay(sixMonthsAgo.getMonth() - 6);
+
+  const today = new Date();
+
+  // Criar uma nova data para 2 dias atrás
+  const twoDaysAgo = new Date(today);
+  twoDaysAgo.setDate(today.getDate() - 2);
+
+console.log(twoDaysAgo);
 
   return (
   <div>
@@ -39,13 +47,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/*<div className="NovosProfessores">
+      <div className="NovosProfessores">
         <h1 className={styles.title}>Novos Professores</h1>
 
         <div className="cardsNovosProfesores">
           {professores.length > 0 ? (
             professores.filter((professor) => { 
-                return new Date(professor.createdAt) >= sixMonthsAgo;
+                return new Date(professor.createdAt) >= twoDaysAgo;
               }
             ).map((professor) => (
               <Professor key={professor.id} {...professor} />
@@ -55,7 +63,7 @@ export default function Home() {
             <p>Nenhum professor encontrado.</p>
           )}
         </div>
-      </div>*/}
+      </div>
 
       <div className="TodosProfessores">
         <h1 className = {styles.title}>Todos os Professores</h1>

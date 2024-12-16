@@ -26,7 +26,7 @@ export default function PerfilAluno() {
                         <div className = "bg-white-100 w-full h-1/4 border-b-2 border-green-600">
 
                             <Image src={user.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto do Usuário" 
-                            className= "w-32 h-32 border border-black rounded-full ml-16 mt-8"/>
+                            className= "w-32 h-32 border border-black rounded-full ml-16 mt-8" width={50} height={50}/>
 
                             <h1 className = "text-xl font-bold ml-16">{user.nome}</h1>
 

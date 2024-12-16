@@ -3,9 +3,9 @@ import { ComentarioData } from '../types/Comentario'
 export interface AvaliacaoData {
   id?: number;
   conteudo: string;  
-  professorID: number; 
+  professor: string; 
   usuarioID: number;
-  disciplinaID: number; 
+  disciplina: string; 
   Comentarios: ComentarioData[];
 
   createdAt?: Date;
