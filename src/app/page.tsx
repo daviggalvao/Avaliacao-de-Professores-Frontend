@@ -47,7 +47,7 @@ export default function Home() {
           
         </div>
       <div className="NovosProfessores">
-        <h1 className="text-center text-black font-bold my-8">Novos Professores</h1>
+        <h1 className="ml-4 text-black font-bold my-8">Novos Professores</h1>
 
         <div className="cardsNovosProfesores">
           {professores.length > 0 ? (
@@ -59,13 +59,13 @@ export default function Home() {
               )
             )
           ) : (
-            <p className="text-center text-black">Nenhum professor encontrado.</p>
+            <p className="ml-4 text-black">Nenhum professor encontrado.</p>
           )}
         </div>
       </div>
 
       <div className="TodosProfessores">
-        <h1 className = "text-center text-black font-bold my-8">Todos os Professores</h1>
+        <h1 className = "ml-4 text-black font-bold my-8">Todos os Professores</h1>
 
         <div className="cardsTodosProfesores">
           {professores.length > 0 ? (
@@ -73,7 +73,7 @@ export default function Home() {
               <Professor key={professor.id} {...professor} />
             ))
           ) : (
-            <p className="text-center text-black">Nenhum professor encontrado.</p>
+            <p className="ml-4 text-black">Nenhum professor encontrado.</p>
           )}
         </div>
       </div>
