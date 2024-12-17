@@ -9,6 +9,7 @@ import { hookAllProfessores } from '../hooks/hookProfessores';
 import { hookAllUsers } from '../hooks/hookUser'; 
 
 import Header from '../components/layout/Header';
+import ModalAvaliação from "@/components/modais/ModalAvaliação";
 
 export default function Home() {
   const professores = hookAllProfessores();
@@ -23,7 +24,7 @@ export default function Home() {
   const twoDaysAgo = new Date(today);
   twoDaysAgo.setDate(today.getDate() - 2);
 
-console.log(twoDaysAgo);
+  console.log(twoDaysAgo);
 
   return (
   <div>
@@ -41,7 +42,7 @@ console.log(twoDaysAgo);
           </div>
           {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
           <div>
-            <button className = "bg-foreground p-2 mr-3 text-white font-bold flex justify-center items-center rounded-xl">Nova Publicação</button>
+            <ModalAvaliação/>
           </div>
           
         </div>
