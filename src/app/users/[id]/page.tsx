@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from '../aa_extra/styles/feed.module.css';
+import defaultFoto from '../../../assets/fotodefault.svg';  // Caminho para a imagem local
 
 import { hookUser } from '@/hooks/hookUser'; 
 import Header from '@/components/layout/Header';
@@ -16,26 +17,30 @@ export default function PerfilAluno() {
     }
     else {
         return (
-            <div>
+            <div className = "">
                 <Header/>
 
-                <div className = "flex justify-center items-center min-h-screen h-screen bg-white">
+                <div className = "flex justify-center items-center flex-1 bg-white">
 
-                    <div className = "bg-white w-1/4 h-full border-2 border-green-600">
+                    <div className = "bg-white w-1/4 border-2 border-green-600 flex flex-col min-h-screen rounded-md">
 
-                        <div className = "bg-white-100 w-full h-1/4 border-b-2 border-green-600">
+                        <div className = "flex flex-col items-center justify-center bg-white-100 w-full h-1/4 border-b-2 border-green-600">
 
-                            <Image src={user.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto do Usuário" 
-                            className= "w-32 h-32 border border-black rounded-full ml-16 mt-8" width={50} height={50}/>
+                            <Image src={
+                                user?.foto_perfil && typeof user.foto_perfil === "string"
+                                ? user.foto_perfil
+                                : defaultFoto
+                                } alt="Foto do Usuário" 
+                                className= "w-32 h-32 border border-black rounded-full mt-4 mb-2" width={50} height={50}/>
 
-                            <h1 className = "text-xl font-bold ml-16">{user.nome}</h1>
+                            <h1 className = "text-xl font-bold mb-1">{user.nome}</h1>
 
-                            <h2 className = "text-xs ml-16">{user.curso}</h2>
+                            <h2 className = "text-xs mb-1">{user.curso}</h2>
 
-                            <h2 className = "text-xs ml-16">{user.email}</h2>
+                            <h2 className = "text-xs mb-2">{user.email}</h2>
                         </div>
 
-                        <div className = "flex-col items-center justify-center">
+                        <div className = "flex flex-col flex-1 items-center justify-center">
                             <h1 className = "text-xl font-bold ml-4 mt-4" >Publicações</h1>
 
                             {user.Avaliacoes?.map((avaliacao) => (

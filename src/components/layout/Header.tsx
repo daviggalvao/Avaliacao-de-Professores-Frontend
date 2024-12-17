@@ -4,8 +4,8 @@ import { UserData } from '../../types/User';
 import { getToken } from '../../utils/auth'; 
 
 import Image from "next/image";
-import logoUnb from '../../assets/logo_unb.png';  // Caminho para a imagem local
-import defaultFoto from '../../assets/default_profile_picture.png';  // Caminho para a imagem local
+import logoUnb from '../../assets/logounb.svg';  // Caminho para a imagem local
+import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a imagem local
 
 import '../../app/globals.css';
 import styles from '../../aa_extra/styles/feed.module.css';
@@ -33,7 +33,7 @@ const Header = () => {
       <Image src={logoUnb}  alt="Logo UNB" className="w-20 h-10"/>
 
       <div className = "m-auto">
-        <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 w-60 h-8 rounded"></input>
+        <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 w-60 h-8 rounded-lg"></input>
       </div>
 
       <div className="flex items-center gap-4">
