@@ -45,18 +45,16 @@ export default function Login() {
         />
         </div>
         <div className = "flex basis-2/4 flex-col justify-center items-center bg-background">
-          <h1 className= {styles.title}>Avaliação de Professores</h1>
-
-          <form onSubmit={handleLogin}>
-            <br/>
+          <h1 className= "text-center text-white text-5xl">Avaliação de Professores</h1>
+          <form onSubmit={handleLogin} className="text-black w-3/5">
               <label htmlFor="email"></label><br/>
-              <input className = {styles.buttonf} type="email" id="email" name="email" placeholder = "Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+              <input className = "text-center relative w-full p-5 mb-3 rounded-3xl" type="email" id="email" name="email" placeholder = "Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
               
               <label htmlFor="senha"></label><br/>
-              <input className = {styles.buttonf} type="password" id="senha" name="senha" placeholder = "Senha" value={senha} onChange={(e) => setSenha(e.target.value)}/>
+              <input className = "text-center relative w-full p-5 mb-3 rounded-3xl" type="password" id="senha" name="senha" placeholder = "Senha" value={senha} onChange={(e) => setSenha(e.target.value)}/>
               
               <div className="flex items-center justify-center">
-                <button type="submit" className={styles.buttonc}>Entrar</button>
+                <button type="submit" className="text-center bg-foreground text-white p-4 w-1/3 rounded-2xl">Entrar</button>
               </div>
           </form>
         </div>
