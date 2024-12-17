@@ -5,6 +5,7 @@ import { getToken } from '../../utils/auth';
 
 import Image from "next/image";
 import logoUnb from '../../assets/logo_unb.png';  // Caminho para a imagem local
+import defaultFoto from '../../assets/default_profile_picture.png';  // Caminho para a imagem local
 
 import '../../app/globals.css';
 import styles from '../../aa_extra/styles/feed.module.css';
@@ -27,28 +28,22 @@ const Header = () => {
   }, []);
 
   return (
-    <div className = {styles.topo}>
+    <div className = "w-full h-20 bg-foreground flex items-center justify-between px-4">
 
-      <Image src={logoUnb}  alt="Logo UNB" className={styles.logo} width={50} height={50} />
+      <Image src={logoUnb}  alt="Logo UNB" className="w-20 h-10"/>
 
-      <div className = {styles.searchboxjan}>
-        <input type="text" placeholder="Buscar Professor(a)" className={styles.searchbox}></input>
+      <div className = "m-auto">
+        <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 w-60 h-8 rounded"></input>
       </div>
 
-      <div className="profile_content">
+      <div className="flex items-center gap-4">
         {isAuthenticated ? (
           <>
             <div className="Sininho">
 
             </div>
 
-            <div className="seuPerfil">
-              <Link href={`/users/${User?.id}`}>
-                <img src={User?.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto de perfil"/>
-              </Link>
-            </div>
-
-            <div className="Logout">
+            <div className="Logout mr-8">
               <button 
                 onClick={() => {
                   localStorage.removeItem('token'); // Remove token
@@ -60,15 +55,26 @@ const Header = () => {
                 Logout
               </button>
             </div>
+
+            <div className=" w-16 h-16 border border-black rounded-full overflow-hidden">
+              <Link href={`/users/${User?.id}`}>
+                <Image src={
+                  User?.foto_perfil && typeof User.foto_perfil === "string"
+                  ? User.foto_perfil
+                  : defaultFoto
+                } alt="Foto de perfil" className = "w-full h-full object-cover"/>
+              </Link>
+            </div>
+
           </>
         ) : (
           <>
             <Link href = "/auth/login">
-              <button className = {styles.loginbutton}>Login</button>
+              <button className = "text-base bg-blue px-2 py-2 rounded-md w-28 flex justify-center items-center cursor-pointer">Login</button>
             </Link>
 
             <Link href = "/auth/register">
-              <button className = {styles.loginbutton}>Criar Conta</button>
+              <button className = "text-base bg-blue px-2 py-2 rounded-md w-28 flex justify-center items-center cursor-pointer">Criar Conta</button>
             </Link>
           </>
         )}

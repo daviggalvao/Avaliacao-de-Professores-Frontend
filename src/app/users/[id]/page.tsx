@@ -19,7 +19,7 @@ export default function PerfilAluno() {
             <div>
                 <Header/>
 
-                <div className = "flex justify-center items-center h-screen bg-white">
+                <div className = "flex justify-center items-center min-h-screen h-screen bg-white">
 
                     <div className = "bg-white w-1/4 h-full border-2 border-green-600">
 
