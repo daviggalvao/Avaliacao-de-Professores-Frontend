@@ -43,7 +43,6 @@ const Header = () => {
       <div className="flex items-center gap-4">
         {isAuthenticated ? (
           <>
-
             <div className="Sininho">
 
             </div>
@@ -77,7 +76,7 @@ const Header = () => {
           </>
         ) : (
 
-          <>
+          <div>
             <Link href = "/auth/login">
               <button className = "text-white bg-[#00FFFF] px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Login</button>
             </Link>
