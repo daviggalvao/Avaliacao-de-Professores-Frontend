@@ -9,6 +9,7 @@ import { hookAllProfessores } from '../hooks/hookProfessores';
 import { hookAllUsers } from '../hooks/hookUser'; 
 
 import Header from '../components/layout/Header';
+import ModalAvaliação from "@/components/modais/ModalAvaliação";
 
 export default function Home() {
   const professores = hookAllProfessores();
@@ -23,32 +24,30 @@ export default function Home() {
   const twoDaysAgo = new Date(today);
   twoDaysAgo.setDate(today.getDate() - 2);
 
-console.log(twoDaysAgo);
+  console.log(twoDaysAgo);
 
   return (
   <div>
-    <div className="Header">
-      <Header/>
-    </div>
+    <Header/>
+    
+    <div className="bg-sky-100 h-screen">
 
-    <div className="AreaProfessores">
-
-      <div className="TodosOsAlunos">
-        <h1 className = {styles.title}>Todos os Usuários</h1>
-
-        <div className="TodosAlunos">
-          {usuarios.length > 0 ? (
-            usuarios.map((user) => (
-              <h1>{user.nome}, {user.email}, {user.curso}</h1>
-            ))
-          ) : (
-            <p>Nenhum usuário encontrado.</p>
-          )}
+        <div className="flex justify-between items-center">
+          <div className="w-80 ml-4 flex justify-center items-center">
+            <input
+              type="text"
+              className="bg-white border-black w-full text-black roundend-2xl p-2 mt-4"
+              placeholder="Buscar Professor(a)"
+            ></input>
+          </div>
+          {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
+          <div>
+            <ModalAvaliação/>
+          </div>
+          
         </div>
-      </div>
-
       <div className="NovosProfessores">
-        <h1 className={styles.title}>Novos Professores</h1>
+        <h1 className="ml-4 text-black font-bold my-8">Novos Professores</h1>
 
         <div className="cardsNovosProfesores">
           {professores.length > 0 ? (
@@ -60,16 +59,13 @@ console.log(twoDaysAgo);
               )
             )
           ) : (
-            <p>Nenhum professor encontrado.</p>
+            <p className="ml-4 text-black">Nenhum professor encontrado.</p>
           )}
         </div>
       </div>
 
       <div className="TodosProfessores">
-        <h1 className = {styles.title}>Todos os Professores</h1>
-
-        <button className = "NovaPublicacao">Nova Publicação</button>
-        <button className = "Ordenar">Ordenar</button>
+        <h1 className = "ml-4 text-black font-bold my-8">Todos os Professores</h1>
 
         <div className="cardsTodosProfesores">
           {professores.length > 0 ? (
@@ -77,7 +73,7 @@ console.log(twoDaysAgo);
               <Professor key={professor.id} {...professor} />
             ))
           ) : (
-            <p>Nenhum professor encontrado.</p>
+            <p className="ml-4 text-black">Nenhum professor encontrado.</p>
           )}
         </div>
       </div>

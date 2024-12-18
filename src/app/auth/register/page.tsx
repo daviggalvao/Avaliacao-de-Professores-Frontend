@@ -3,6 +3,12 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import Image from "next/image";
+
+import logoUnb from "../../../assets/logounb.png";
+import "../../globals.css";
+import styles from "../../../aa_extra/styles/login.module.css";
+
+import React, { useState } from "react";
 import { registerUser } from "@/app/_api/authApi";
 
 export default function SignIn() {
@@ -13,6 +19,7 @@ export default function SignIn() {
     curso: "",
     departamento: "",
   });
+
   const createUser = async () => {
     try {
       await registerUser(input);
@@ -20,68 +27,67 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex min-h-screen">
-      <div className="flex-1 relative">
+
+    <div className="flex h-screen">
+      <div className="bg-foreground flex flex-col justify-center items-center">
         <Image
-          src="https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Grupo de estudantes em uma roda"
-          className="object-cover w-full h-full"
-          layout="fill"
+          src={logoUnb}
+          alt="Logo UnB"
+          className="flex basis-1/4 h-1/2 w-1/2"
+          width={500}
+          height={500}
         />
       </div>
-      <div className="flex flex-1 flex-col bg-background justify-center items-center p-8">
-        <h1 className="text-white text-4xl mb-6">Avaliação de Professores</h1>
 
-        <form className="flex flex-col space-y-4">
+      <div className="flex basis-2/4 flex-col justify-center items-center bg-background">
+        <h1 className="text-center text-white text-5xl">
+          Avaliação de Professores
+        </h1>
+        <form className="text-black w-3/5 my-4">
           <input
-            type="email"
-            id="email"
-            name="email"
+            type="text"
+            className="text-center relative w-full mb-3 p-5 rounded-3xl"
             placeholder="Email"
             onChange={(e) => setInput({ ...input, email: e.target.value })}
-            className="w-96 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-foreground"
-          />
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            placeholder="Senha"
-            onChange={(e) => setInput({ ...input, senha: e.target.value })}
-            className="w-96 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-foreground"
           />
           <input
             type="text"
-            id="nome"
-            name="nome"
+            className="text-center relative w-full mb-3 p-5 rounded-3xl"
             placeholder="Nome"
             onChange={(e) => setInput({ ...input, nome: e.target.value })}
-            className="w-96 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-foreground"
           />
           <input
             type="text"
-            id="curso"
-            name="curso"
+            className="text-center relative w-full mb-3 p-5 rounded-3xl"
+            placeholder="Senha"
+            onChange={(e) => setInput({ ...input, senha: e.target.value })}
+          />
+          <input
+            type="text"
+            className="text-center relative w-full mb-3 p-5 rounded-3xl"
             placeholder="Curso"
             onChange={(e) => setInput({ ...input, curso: e.target.value })}
-            className="w-96 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-foreground"
           />
           <input
             type="text"
-            id="departamento"
-            name="departamento"
+            className="text-center relative w-full p-5 rounded-3xl"
+
             placeholder="Departamento"
             onChange={(e) =>
               setInput({ ...input, departamento: e.target.value })
             }
-            className="w-96 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-foreground"
+
           />
+        </form>
+        <div className="flex justify-center items-center w-1/4">
           <button
             onClick={createUser}
-            className="w-48 py-3 bg-foreground text-white rounded-xl hover:opacity-90 hover:scale-105 transition duration-200"
+            className="text-center bg-foreground text-white p-4 w-3/4 rounded-2xl"
           >
-            Entrar
+            Criar
           </button>
-        </form>
+        </div>
+
       </div>
     </div>
   );
