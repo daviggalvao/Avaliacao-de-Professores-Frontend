@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import styles from '../aa_extra/styles/feed.module.css';
+
+import defaultFoto from '../../../assets/fotodefault.svg';  // Caminho para a imagem local
+import emailUser from '../../../assets/email.svg';
+import courseUser from '../../../assets/courseuser.svg';
 
 import { hookUser } from '@/hooks/hookUser'; 
 import Header from '@/components/layout/Header';
@@ -16,26 +19,46 @@ export default function PerfilAluno() {
     }
     else {
         return (
-            <div>
+            <div className = "">
                 <Header/>
 
-                <div className = "flex justify-center items-center h-screen bg-white">
+                <div className = "flex justify-center items-center flex-1 bg-white">
 
-                    <div className = "bg-white w-1/4 h-full border-2 border-green-600">
+                    <div className = "bg-green-200 w-1/4 border-2 border-green-600 flex flex-col min-h-screen rounded-xl">
 
-                        <div className = "bg-white-100 w-full h-1/4 border-b-2 border-green-600">
+                        <div className = "flex flex-col justify-center bg-white-100 w-full h-1/4 border-b-2 border-green-600">
 
-                            <Image src={user.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto do Usuário" 
-                            className= "w-32 h-32 border border-black rounded-full ml-16 mt-8" width={50} height={50}/>
+                            <div className = "ml-10">
 
-                            <h1 className = "text-xl font-bold ml-16">{user.nome}</h1>
+                                <div className = "flex items-center justify-between w-full">
+                                    <Image src={
+                                        user?.foto_perfil && typeof user.foto_perfil === "string"
+                                        ? user.foto_perfil
+                                        : defaultFoto
+                                        } alt="Foto do Usuário" 
+                                        className= "w-32 h-32 border-4 border-black rounded-full mt-4 mb-2" width={50} height={50}/>
+                                    <div className = "flex flex-col mr-10">
+                                        <button className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black mb-1">Editar perfil</button>
+                                        <button className = "text-black bg-green-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black">Excluir perfil</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1 className = "text-xl font-bold mb-1">{user.nome}</h1>
+                                </div>
 
-                            <h2 className = "text-xs ml-16">{user.curso}</h2>
+                                <div className = "flex items-center gap-1">
+                                    <Image src = {courseUser} alt = "icone curso" className = ""  width={25} height={25}/>
+                                    <h2 className = "text-xs mb-1">{user.curso}</h2>
+                                </div>
 
-                            <h2 className = "text-xs ml-16">{user.email}</h2>
+                                <div className = "flex items-center gap-1 mb-5">
+                                    <Image src = {emailUser} alt = "icone email" className = ""  width={25} height={25}/>
+                                    <h2 className = "text-xs">{user.email}</h2>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className = "flex-col items-center justify-center">
+                        <div className = "flex flex-col flex-1 items-center">
                             <h1 className = "text-xl font-bold ml-4 mt-4" >Publicações</h1>
 
                             {user.Avaliacoes?.map((avaliacao) => (

@@ -5,32 +5,31 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import { loginUser } from '@/app/_api/authApi';
 import logoUnb from "../../../assets/logounb.png";
+
 import Image from "next/image";
-import '../../globals.css';
-import styles from '../../../aa_extra/styles/login.module.css';
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
 
-    const handleLogin = async (event: React.FormEvent) => {
-      event.preventDefault(); // Evita reload da página
+  const handleLogin = async (event) => {
+    event.preventDefault(); // Prevents page reload
 
-      try {
-          // Chamando a função de autenticação
-          const response = await loginUser(email, senha);
-          console.log('Usuário autenticado com sucesso:', response);
+    try {
+      const response = await loginUser(email, senha);
+      console.log("Usuário autenticado com sucesso:", response);
 
-          // Salvando o token no localStorage
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('user', JSON.stringify(response.user));
+      // Saving the token in localStorage
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("user", JSON.stringify(response.user));
 
-          // Redirecionando o usuário
-          window.location.href = '/'; 
-      } catch (error) {
-          console.error('Erro na autenticação:', error);
-          alert('Email ou senha inválidos. Por favor, tente novamente.');
-      }
+      // Redirecting the user
+      window.location.href = "/";
+    } catch (error) {
+      console.error("Erro na autenticação:", error);
+      setError("Email ou senha inválidos. Por favor, tente novamente.");
+    }
   };
   
     return (  
@@ -60,6 +59,7 @@ export default function Login() {
         </div>
       </div>  
     );
+
 }
 
 /*    <div className="">

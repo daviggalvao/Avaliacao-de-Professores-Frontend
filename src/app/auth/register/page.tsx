@@ -1,6 +1,9 @@
 "use client";
 
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 import Image from "next/image";
+
 import logoUnb from "../../../assets/logounb.png";
 import "../../globals.css";
 import styles from "../../../aa_extra/styles/login.module.css";
@@ -24,6 +27,7 @@ export default function SignIn() {
   };
 
   return (
+
     <div className="flex h-screen">
       <div className="bg-foreground flex flex-col justify-center items-center">
         <Image
@@ -67,10 +71,12 @@ export default function SignIn() {
           <input
             type="text"
             className="text-center relative w-full p-5 rounded-3xl"
+
             placeholder="Departamento"
             onChange={(e) =>
               setInput({ ...input, departamento: e.target.value })
             }
+
           />
         </form>
         <div className="flex justify-center items-center w-1/4">
@@ -81,6 +87,7 @@ export default function SignIn() {
             Criar
           </button>
         </div>
+
       </div>
     </div>
   );
