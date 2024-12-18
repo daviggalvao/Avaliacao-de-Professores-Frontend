@@ -10,7 +10,6 @@ import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a image
 import loginOut from '../../assets/loginout.svg';  // Caminho para a imagem local
 
 import '../../app/globals.css';
-import styles from '../../aa_extra/styles/feed.module.css';
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false); 
@@ -56,6 +55,7 @@ const Header = () => {
               >
 
               <Image src={loginOut}  alt="botão de deslogar" className=""/>
+              <Link href = "/"></Link>
               </button>
             </div>
 

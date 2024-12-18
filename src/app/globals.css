@@ -17,3 +17,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Inter';
+  margin: 0;
+  padding: 0;
+}
