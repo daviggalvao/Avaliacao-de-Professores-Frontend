@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { UserData } from '../../types/User'; 
 import { getToken } from '../../utils/auth'; 
 
+
 import Image from "next/image";
 import logoUnb from '../../assets/logounb.svg';  // Caminho para a imagem local
 import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a imagem local
+import loginOut from '../../assets/loginout.svg';  // Caminho para a imagem local
 
 import '../../app/globals.css';
 import styles from '../../aa_extra/styles/feed.module.css';
@@ -32,7 +34,7 @@ const Header = () => {
 
       <Image src={logoUnb}  alt="Logo UNB" className="w-20 h-10"/>
 
-      <div className = "m-auto">
+      <div className = "flex-1 flex justify-center">
         <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 w-60 h-8 rounded-lg"></input>
       </div>
 
@@ -43,7 +45,7 @@ const Header = () => {
 
             </div>
 
-            <div className="Logout mr-8">
+            <div className="Logout px-4 py-4 w-20">
               <button 
                 onClick={() => {
                   localStorage.removeItem('token'); // Remove token
@@ -52,7 +54,8 @@ const Header = () => {
                   setUser(null); // Remove usuário autenticado
                 }}
               >
-                Logout
+
+              <Image src={loginOut}  alt="botão de deslogar" className=""/>
               </button>
             </div>
 
@@ -70,11 +73,11 @@ const Header = () => {
         ) : (
           <>
             <Link href = "/auth/login">
-              <button className = "text-base bg-blue px-2 py-2 rounded-md w-28 flex justify-center items-center cursor-pointer">Login</button>
+              <button className = "text-white bg-[#00FFFF] px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Login</button>
             </Link>
 
             <Link href = "/auth/register">
-              <button className = "text-base bg-blue px-2 py-2 rounded-md w-28 flex justify-center items-center cursor-pointer">Criar Conta</button>
+              <button className = "text-white bg-[#00FFFF] px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Criar Conta</button>
             </Link>
           </>
         )}

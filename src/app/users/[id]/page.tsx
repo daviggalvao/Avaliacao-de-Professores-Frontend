@@ -22,7 +22,7 @@ export default function PerfilAluno() {
 
                 <div className = "flex justify-center items-center flex-1 bg-white">
 
-                    <div className = "bg-white w-1/4 border-2 border-green-600 flex flex-col min-h-screen rounded-md">
+                    <div className = "bg-green-200 w-1/4 border-2 border-green-600 flex flex-col min-h-screen rounded-xl">
 
                         <div className = "flex flex-col items-center justify-center bg-white-100 w-full h-1/4 border-b-2 border-green-600">
 
@@ -40,7 +40,7 @@ export default function PerfilAluno() {
                             <h2 className = "text-xs mb-2">{user.email}</h2>
                         </div>
 
-                        <div className = "flex flex-col flex-1 items-center justify-center">
+                        <div className = "flex flex-col flex-1 items-center">
                             <h1 className = "text-xl font-bold ml-4 mt-4" >Publicações</h1>
 
                             {user.Avaliacoes?.map((avaliacao) => (
