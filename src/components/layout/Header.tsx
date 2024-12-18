@@ -37,7 +37,7 @@ const Header = () => {
       <Image src={logoUnb}  alt="Logo UNB" className="w-20 h-10"/>
 
       <div className = "flex-1 flex justify-center">
-        <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 w-60 h-8 rounded-lg"></input>
+        <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 w-64 h-8 rounded-lg"></input>
       </div>
 
       <div className="flex items-center gap-4">
@@ -76,14 +76,13 @@ const Header = () => {
           </>
         ) : (
 
-          <div>
+          <div className="flex">
             <Link href = "/auth/login">
-              <button className = "text-white bg-[#00FFFF] px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Login</button>
+              <button className = "text-white bg-[#00FFFF] mr-2 px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Login</button>
             </Link>
 
             <Link href = "/auth/register">
               <button className = "text-white bg-[#00FFFF] px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Criar Conta</button>
-
             </Link>
           </div>
         )}

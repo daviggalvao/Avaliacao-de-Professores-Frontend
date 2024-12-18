@@ -31,15 +31,7 @@ export default function Home() {
     <Header/>
     
     <div className="bg-sky-100 h-screen">
-
         <div className="flex justify-between items-center">
-          <div className="w-80 ml-4 flex justify-center items-center">
-            <input
-              type="text"
-              className="bg-white border-black w-full text-black roundend-2xl p-2 mt-4"
-              placeholder="Buscar Professor(a)"
-            ></input>
-          </div>
           {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
           <div>
             <ModalAvaliação/>
@@ -49,7 +41,7 @@ export default function Home() {
       <div className="NovosProfessores">
         <h1 className="ml-4 text-black font-bold my-8">Novos Professores</h1>
 
-        <div className="cardsNovosProfesores">
+        <div className="bg-sky-100 grid mx-80 gap-4 grid-cols-4">
           {professores.length > 0 ? (
             professores.filter((professor) => { 
                 return new Date(professor.createdAt) >= twoDaysAgo;
