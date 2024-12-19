@@ -28,7 +28,6 @@ export default function SignIn() {
   };
 
   return (
-
     <div className="flex h-screen">
       <div className="bg-foreground flex flex-col justify-center items-center">
         <Image
@@ -46,7 +45,7 @@ export default function SignIn() {
         </h1>
         <form className="text-black w-3/5 my-4">
           <input
-            type="text"
+            type="email"
             className="text-center relative w-full mb-3 p-5 rounded-3xl"
             placeholder="Email"
             onChange={(e) => setInput({ ...input, email: e.target.value })}
@@ -58,7 +57,7 @@ export default function SignIn() {
             onChange={(e) => setInput({ ...input, nome: e.target.value })}
           />
           <input
-            type="text"
+            type="password"
             className="text-center relative w-full mb-3 p-5 rounded-3xl"
             placeholder="Senha"
             onChange={(e) => setInput({ ...input, senha: e.target.value })}
@@ -72,12 +71,10 @@ export default function SignIn() {
           <input
             type="text"
             className="text-center relative w-full p-5 rounded-3xl"
-
             placeholder="Departamento"
             onChange={(e) =>
               setInput({ ...input, departamento: e.target.value })
             }
-
           />
         </form>
         <div className="flex justify-center items-center w-1/4">
@@ -88,7 +85,6 @@ export default function SignIn() {
             Criar
           </button>
         </div>
-
       </div>
     </div>
   );
