@@ -1,6 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+import { useEffect } from "react";
+import { UserData } from "../../types/User";
+import { getToken } from "../utils/auth";
 import Link from "next/link";
 import styles from '../aa_extra/styles/login.module.css';
 
@@ -12,8 +16,24 @@ import Header from '../components/layout/Header';
 import ModalAvaliação from "@/components/modais/ModalAvaliação";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [User, setUser] = useState<UserData | null>(null); // Dados do usuário autenticado
   const professores = hookAllProfessores();
   const usuarios = hookAllUsers();
+
+  useEffect(() => {
+    const token = getToken(); // Verifica se existe um token
+    if (token) {
+      setIsAuthenticated(true);
+
+      // Busca os dados do usuário autenticado do localStorage
+      const userData = localStorage.getItem("user");
+      if (userData) {
+        setUser(JSON.parse(userData));
+      }
+    }
+  }, []);
 
   //const sixMonthsAgo = new Date();
   //sixMonthsAgo.setDay(sixMonthsAgo.getMonth() - 6);
@@ -33,8 +53,14 @@ export default function Home() {
     <div className="bg-sky-100 h-screen w-screen">
         <div className="bg-sky-100 ml-4 flex justify-between items-center">
           {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
-          <div className="mt-4">
-            <ModalAvaliação/>
+          <div className="mt-4 flex">
+            {isAuthenticated ? (
+                <ModalAvaliação></ModalAvaliação>
+              ) : (
+                <Link href="/auth/login">
+                  <button className = "bg-foreground p-2 mr-3 text-white font-bold flex justify-center items-center rounded-xl">Nova Publicação</button>
+                </Link>
+              )}
           </div>
           
         </div>
