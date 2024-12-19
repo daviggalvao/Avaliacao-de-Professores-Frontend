@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div>
       <Header/>
-      
+
       <div className="bg-sky-100 h-screen w-screen">
           <div className="bg-sky-100 ml-4 flex justify-between items-center">
             {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
@@ -48,7 +48,7 @@ export default function Home() {
                   </Link>
                 )}
             </div>
-            
+            <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 mr-8  w-60 h-8 rounded-lg"/>
           </div>
         <div className="NovosProfessores">
           <h1 className="ml-4 text-black font-bold my-8">Novos Professores</h1>

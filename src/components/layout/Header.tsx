@@ -20,14 +20,6 @@ const Header = () => {
     <div className="w-full h-20 bg-foreground flex items-center justify-between px-4">
       <Image src={logoUnb} alt="Logo UNB" className="w-20 h-10" />
 
-      <div className="flex-1 flex justify-center">
-        <input
-          type="text"
-          placeholder="Buscar Professor(a)"
-          className="bg-white-100 w-60 h-8 rounded-lg"
-        />
-      </div>
-
       <div className="flex items-center gap-4">
         {isUserLoggedIn ? (
           <>

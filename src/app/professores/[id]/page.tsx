@@ -113,10 +113,10 @@ export default function Perfilprofessor() {
             <div className="flex flex-col flex-1 items-center">
               <h1 className="text-xl font-bold ml-4 mt-4">Avaliações</h1>
                
-                {avaliacaovect.length > 0 ? (
-                avaliacaovect.map((avaliacao) => {
-                    return <Avaliacao key={avaliacao.id} {...avaliacao} />;
-                }) ) : (<h2>Sem avaliações encontradas sobre esse professor.</h2>)}
+                {professor.Avaliacoes.length > 0 ? (
+                professor.Avaliacoes.map((avaliacao) => (
+                  <Avaliacao key={avaliacao.id} {...avaliacao} />
+                ))) : (<h2>Sem avaliações encontradas sobre esse professor.</h2>)}
             </div>
           </div>
         </div>
