@@ -74,11 +74,11 @@ const Header = () => {
 
           <div className="flex">
             <Link href = "/auth/login">
-              <button className = "text-white bg-[#00FFFF] mr-2 px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Login</button>
+              <button className = "text-white bg-[#00FFFF] mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Login</button>
             </Link>
 
             <Link href = "/auth/register">
-              <button className = "text-white bg-[#00FFFF] px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Criar Conta</button>
+              <button className = "text-white bg-[#00FFFF] px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Criar Conta</button>
             </Link>
           </div>
         )}

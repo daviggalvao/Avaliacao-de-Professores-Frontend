@@ -6,6 +6,7 @@ import Link from "next/link";
 import defaultFoto from '../../../assets/fotodefault.svg';  // Caminho para a imagem local
 import emailUser from '../../../assets/email.svg';
 import courseUser from '../../../assets/courseuser.svg';
+import leftArrow from '../../../assets/leftarrow.svg';
 
 import { hookUser } from '@/hooks/hookUser'; 
 import Header from '@/components/layout/Header';
@@ -19,12 +20,21 @@ export default function PerfilAluno() {
     }
     else {
         return (
-            <div className = "">
+            <div>
                 <Header/>
 
-                <div className = "flex justify-center items-center flex-1 bg-white">
+                <div className = "flex justify-center  flex-1 bg-white">
+                    
+                    <div className = "">
 
-                    <div className = "bg-[#71FDC5] w-1/4 border-2 border-green-400 flex flex-col min-h-screen rounded-xl">
+                        <Link href = "/">
+                            <button>
+                                <Image src = {leftArrow} alt = "return feed" width={50} height={50}/>
+                            </button>
+                        </Link>
+                    </div>
+
+                    <div className = "bg-[#71FDC5] w-1/3 border-2 border-green-400 flex flex-col min-h-screen rounded-xl">
 
                         <div className = "flex flex-col justify-center bg-white-100 w-full h-1/4 border-b-2 border-green-600">
 
