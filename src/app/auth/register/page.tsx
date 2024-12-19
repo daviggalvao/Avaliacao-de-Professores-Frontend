@@ -3,6 +3,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import logoUnb from "../../../assets/logounb.png";
 import "../../globals.css";
@@ -22,6 +23,7 @@ export default function SignIn() {
   const createUser = async () => {
     try {
       await registerUser(input);
+      window.location.href = "/auth/login";
     } catch (error) {}
   };
 

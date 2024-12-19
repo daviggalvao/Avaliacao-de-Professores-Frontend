@@ -36,10 +36,6 @@ const Header = () => {
 
       <Image src={logoUnb}  alt="Logo UNB" className="w-20 h-10"/>
 
-      <div className = "flex-1 flex justify-center">
-        <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 w-64 h-8 rounded-lg"></input>
-      </div>
-
       <div className="flex items-center gap-4">
         {isAuthenticated ? (
           <>
