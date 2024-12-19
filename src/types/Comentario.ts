@@ -1,5 +1,6 @@
 export interface ComentarioData {
   id?: number; 
+  
   conteudo: string; 
   usuarioID: number; 
   avaliacaoID: number; 

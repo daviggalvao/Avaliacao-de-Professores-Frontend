@@ -9,6 +9,8 @@ import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a image
 
 const Avaliacao = ( Avaliacao : AvaliacaoData) => {
   const user = hookUserID(Avaliacao.usuarioID)
+  const comentariosCount = Array.isArray(Avaliacao.Comentarios) ? Avaliacao.Comentarios.length : 0;
+
   return (
     <div className = "bg-green-500 rounded-3xl w-4/5 mt-5 mb-5">
 
@@ -46,7 +48,7 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
       <div className = "ml-12 flex items-center gap-2 mb-4">
         <Image src = {commentUser} alt = "icone comentário" className = ""  width={25} height={25}/>
         <Link href={`/Avaliacao/${Avaliacao.id}`}>
-          <p className = "font-medium text-xs">{Avaliacao.Comentarios.length} comentário(s)</p>
+          <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
         </Link>
       </div>
 

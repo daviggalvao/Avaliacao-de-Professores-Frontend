@@ -15,6 +15,8 @@ import Header from "@/components/layout/Header";
 import Avaliacao from "@/components/entidades/Avaliacao";
 import { deleteUser } from "@/app/_api/userApi";
 import { setIsAuthenticated, setUser } from "@/hooks/hookUser";
+import ModalPerfil from "@/components/modais/ModalPerfil";
+
 
 export default function PerfilAluno() {
 
@@ -64,7 +66,7 @@ export default function PerfilAluno() {
                                         } alt="Foto do Usuário" 
                                         className= "w-32 h-32 border-4 border-black rounded-full mt-4 mb-2" width={50} height={50}/>
                                     <div className = "flex flex-col mr-10">
-                                        <button className = "text-black bg-green-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black mb-1 font-light">Editar perfil</button>
+                                        <ModalPerfil></ModalPerfil>
                                         <button    onClick={delRed} 
                                           className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black font-light">Excluir perfil</button>
                                     </div>
@@ -76,12 +78,13 @@ export default function PerfilAluno() {
                 <div className="flex items-center gap-1">
                   <Image
                     src={courseUser}
-                    alt="icone curso"
+                    alt="icone curso/departamento"
                     className=""
                     width={25}
                     height={25}
                   />
-                  <h2 className="text-xs mb-1">{user.curso}</h2>
+                  <h2 className="text-xs mb-1">{user.curso} /</h2>
+                  <h2 className = "text-xs mb-1">{user.departamento}</h2>
                 </div>
 
                 <div className="flex items-center gap-1 mb-5">
