@@ -1,10 +1,13 @@
-// src/types/Professor.ts
+import { AvaliacaoData } from '../types/Avaliacao'
+
 export interface ProfessorData {
   id?: number; 
+
   nome: string; 
   departamento: string; 
   disciplinaID?: number;
   foto_perfil: string | null; 
+  Avaliacoes?: AvaliacaoData[];
 
   createdAt: Date;
   updatedAt?: Date;

@@ -58,9 +58,6 @@ export function hookUserID(id: number | null) {
   return user;
 }
 
-
-
-
 export function hookAllUsers() {
   const [users, setUsers] = useState<UserData[]>([]);
 

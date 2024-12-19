@@ -2,6 +2,7 @@ import { AvaliacaoData } from '../types/Avaliacao'
 
 export interface UserData {
   id?: number;
+  
   nome: string;
   email: string;
   senha: string;
@@ -18,7 +19,6 @@ export interface UpdateUser {
   nome?: string;
   email?: string;
   senha?: string;
-  departamento?: string;
   foto_perfil?: string | null;  // Caso o campo seja opcional ou nulo
 }
   

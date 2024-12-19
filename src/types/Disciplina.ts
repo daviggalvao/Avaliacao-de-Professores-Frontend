@@ -1,6 +1,7 @@
 // src/types/Disciplina.ts
 export interface DisciplinaData {
   id?: number; 
+
   nome: string; 
   professorID: number; 
 
@@ -9,6 +10,6 @@ export interface DisciplinaData {
 }
 
 export interface UpdateDisciplina {
-  professorId?: string;
+  professorID?: string;
 }
   

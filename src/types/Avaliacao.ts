@@ -2,10 +2,11 @@ import { ComentarioData } from '../types/Comentario'
 
 export interface AvaliacaoData {
   id?: number;
+
   conteudo: string;  
-  professor: string; 
+  professorID: number; 
   usuarioID: number;
-  disciplina: string; 
+  disciplinaID: number; 
   Comentarios: ComentarioData[];
 
   createdAt?: Date;
