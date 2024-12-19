@@ -7,7 +7,7 @@ export interface UserData {
   senha: string;
   curso: string;
   departamento: string;
-  foto_perfil: string | null;  // Caso o campo seja opcional ou nulo
+  foto_perfil?: string | null;  // Caso o campo seja opcional ou nulo
   Avaliacoes?: AvaliacaoData[];
 
   createdAt?: Date;
@@ -18,7 +18,5 @@ export interface UpdateUser {
   nome?: string;
   email?: string;
   senha?: string;
-  departamento?: string;
-  foto_perfil?: string | null;  // Caso o campo seja opcional ou nulo
 }
   

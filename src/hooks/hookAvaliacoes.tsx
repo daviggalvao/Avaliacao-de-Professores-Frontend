@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import { getUserPublications } from '../app/_api/userApi';;
 
 const UserPublications = ({ userId }: { userId: number }) => {
@@ -47,4 +47,4 @@ const UserPublications = ({ userId }: { userId: number }) => {
   );
 };
 
-export default UserPublications;
+export default UserPublications; */

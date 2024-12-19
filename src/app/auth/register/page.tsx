@@ -8,7 +8,6 @@ import logoUnb from "../../../assets/logounb.png";
 import "../../globals.css";
 import styles from "../../../aa_extra/styles/login.module.css";
 
-import React, { useState } from "react";
 import { registerUser } from "@/app/_api/authApi";
 
 export default function SignIn() {
