@@ -6,6 +6,7 @@ import Image from "next/image";
 import lixeira from '../../assets/lixo.svg';
 import commentUser from '../../assets/comment.svg';
 import ModalComentario from '../modais/ModalComentario';
+import ModalEditComentario from '../modais/ModalEditComentario';
 import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a imagem local
 import { deleteAvaliacao } from '@/app/_api/avaliacaoApi';
 
@@ -59,10 +60,8 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
         <Link href={`/Avaliacao/${Avaliacao.id}`}>
           <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
         </Link>
-        <button onClick={delAv}>
-          <Image src = {lixeira} alt = "icone lixeira" className = "ml-4"  width={25} height={25}/>
-        </button>
         <ModalComentario></ModalComentario>
+        <ModalEditComentario></ModalEditComentario>
       </div>
 
     </div>

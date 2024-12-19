@@ -7,7 +7,7 @@ import commentUser from '../../assets/comment.svg';
 import pencil from '../../assets/pencil.svg';
 
 
-const ModalComentario = () => {
+const ModalEditComentario = () => {
   const [open, setOpen] = useState(false);
   return (
     <div>
@@ -26,7 +26,8 @@ const ModalComentario = () => {
                     <br />
                     </div>
                     <div className="flex">
-                        <button className="text-white bg-[#00FFFF] mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Comentar</button>
+                        <button className="text-white bg-[#00FFFF] mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Editar</button>
+                        <button onClick={() => setOpen(!open)} className="text-white ml-56 bg-[#00FFFF] mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Apagar</button>
                         <button onClick={() => setOpen(!open)} className="text-white ml-56 bg-[#00FFFF] mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white">Sair</button>
                     </div>
                 </div>
@@ -38,4 +39,4 @@ const ModalComentario = () => {
   );
 };
 
-export default ModalComentario;
+export default ModalEditComentario;
