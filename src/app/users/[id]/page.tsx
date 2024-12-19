@@ -38,8 +38,8 @@ export default function PerfilAluno() {
                                         } alt="Foto do Usuário" 
                                         className= "w-32 h-32 border-4 border-black rounded-full mt-4 mb-2" width={50} height={50}/>
                                     <div className = "flex flex-col mr-10">
-                                        <button className = "text-black bg-[#FF8C9A] px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black mb-1">Editar perfil</button>
-                                        <button className = "text-black bg-green-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black">Excluir perfil</button>
+                                        <button className = "text-black bg-green-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black mb-1 font-light">Editar perfil</button>
+                                        <button className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black font-light">Excluir perfil</button>
                                     </div>
                                 </div>
                                 <div>

@@ -12,6 +12,15 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
+      fontFamily: {
+        inter: ["Inter"]
+      },
+      fontWeight: {
+        light: "100",
+        medium: "400",  
+        bold: "700",    
+      },
     },
   },
   plugins: [],
