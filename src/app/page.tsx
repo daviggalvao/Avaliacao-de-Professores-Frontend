@@ -30,7 +30,7 @@ export default function Home() {
   <div>
     <Header/>
     
-    <div className="bg-sky-100 h-screen">
+    <div className="bg-sky-100 h-screen w-screen">
         <div className="flex justify-between items-center">
           {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
           <div>
@@ -41,7 +41,7 @@ export default function Home() {
       <div className="NovosProfessores">
         <h1 className="ml-4 text-black font-bold my-8">Novos Professores</h1>
 
-        <div className="bg-sky-100 grid mx-80 gap-4 grid-cols-4">
+        <div className="bg-sky-100 grid grid-cols-4 ml-4">
           {professores.length > 0 ? (
             professores.filter((professor) => { 
                 return new Date(professor.createdAt) >= twoDaysAgo;
@@ -56,10 +56,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="TodosProfessores">
+      <div className="TodosProfessores bg-sky-100">
         <h1 className = "ml-4 text-black font-bold my-8">Todos os Professores</h1>
 
-        <div className="cardsTodosProfesores">
+        <div className="bg-sky-100 grid grid-cols-4 ml-4">
           {professores.length > 0 ? (
             professores.map((professor) => (
               <Professor key={professor.id} {...professor} />

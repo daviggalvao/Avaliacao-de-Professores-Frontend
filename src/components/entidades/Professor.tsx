@@ -24,7 +24,7 @@ const Professor = ( Professor : ProfessorData) => {
   const nomeDisciplina = disciplina ? disciplina.nome : "Sem informações de disciplinas"
 
   return (
-    <div className ="bg-white w-40 h-48 p-2 rounded-md flex flex-col justify-center items-center">
+    <div className ="bg-white my-4 w-40 h-48 p-2 rounded-md flex flex-col justify-center items-center">
       <div className="FotoProfessor">
         <Image src={
             Professor?.foto_perfil && typeof Professor.foto_perfil === "string"
@@ -34,7 +34,7 @@ const Professor = ( Professor : ProfessorData) => {
           className = "w-32 h-24 rounded-xl" width={50} height={50}/>
       </div>
       
-      <div className="nomeProfessor">
+      <div className="nomeProfessor mt-2">
         <Link href={`/professores/${Professor.id}`}>
           <h1>{Professor.nome}</h1>
         </Link>
