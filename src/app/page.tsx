@@ -31,9 +31,9 @@ export default function Home() {
     <Header/>
     
     <div className="bg-sky-100 h-screen w-screen">
-        <div className="flex justify-between items-center">
+        <div className="bg-sky-100 ml-4 flex justify-between items-center">
           {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
-          <div>
+          <div className="mt-4">
             <ModalAvaliação/>
           </div>
           
