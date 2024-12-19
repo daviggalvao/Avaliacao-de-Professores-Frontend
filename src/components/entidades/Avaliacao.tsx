@@ -3,7 +3,6 @@ import { AvaliacaoData } from '../../types/Avaliacao';
 import { hookUserID } from '@/hooks/hookUser';
 import Link from "next/link";
 import Image from "next/image";
-import styles from '../aa_extra/styles/feed.module.css';
 import commentUser from '../../assets/comment.svg';
 import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a imagem local
 
@@ -38,8 +37,8 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
             : 'Data não disponível'}
          </h4>
 
-        <h4 className = "text-xs font-light">{Avaliacao.professor}</h4>
-        <h4 className = "text-xs font-light">{Avaliacao.disciplina}</h4>
+        <h4 className = "text-xs font-light">{Avaliacao.professor.nome}</h4>
+        <h4 className = "text-xs font-light">{Avaliacao.disciplina.nome}</h4>
 
       </div>
 
