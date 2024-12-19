@@ -76,12 +76,13 @@ export default function PerfilAluno() {
                 <div className="flex items-center gap-1">
                   <Image
                     src={courseUser}
-                    alt="icone curso"
+                    alt="icone curso/departamento"
                     className=""
                     width={25}
                     height={25}
                   />
-                  <h2 className="text-xs mb-1">{user.curso}</h2>
+                  <h2 className="text-xs mb-1">{user.curso} /</h2>
+                  <h2 className = "text-xs mb-1">{user.departamento}</h2>
                 </div>
 
                 <div className="flex items-center gap-1 mb-5">

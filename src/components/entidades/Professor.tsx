@@ -1,15 +1,37 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import { ProfessorData } from '../../types/Professor'; 
+import { DisciplinaData } from '../../types/Disciplina'; 
 import Link from "next/link";
 import Image from "next/image";
 import styles from '../../aa_extra/styles/feed.module.css';
+import defaultFoto from '../../assets/fotodefault.svg';
+import { getAllDisciplinas } from '../../app/_api/disciplinaApi';
 
 const Professor = ( Professor : ProfessorData) => {
+
+  const [disciplinas, setDisciplinas] = useState<DisciplinaData[]>([]);
+
+  useEffect(() => {
+    const fetchDisciplinas = async () => {
+      const disciplinasData = await getAllDisciplinas();
+      setDisciplinas(disciplinasData);
+    };
+    fetchDisciplinas();
+  }, [])
+
+  const disciplina = disciplinas.find(nome => nome.id === Professor.disciplinaID);
+  const nomeDisciplina = disciplina ? disciplina.nome : "Sem informações de disciplinas"
+
   return (
-    <div className = {styles.moldeprof}>
+    <div className ="bg-white w-40 h-48 p-2 rounded-md flex flex-col justify-center items-center">
       <div className="FotoProfessor">
-        <Image src={Professor.foto_perfil || '/src/assets/default_profile_picture.png'} alt="Foto do Professor" 
-        className = {styles.imagemprof} width={50} height={50}/>
+        <Image src={
+            Professor?.foto_perfil && typeof Professor.foto_perfil === "string"
+            ? Professor.foto_perfil
+            : defaultFoto
+          } alt="Foto do Professor" 
+          className = "w-32 h-24 rounded-xl" width={50} height={50}/>
       </div>
       
       <div className="nomeProfessor">
@@ -18,8 +40,8 @@ const Professor = ( Professor : ProfessorData) => {
         </Link>
       </div>
 
-      <div className='disciplinaProfessor'>
-        <p>{Professor.disciplinaID}</p>
+      <div className='disciplinaProfessor font-light'>
+        <p>{nomeDisciplina}</p>
       </div>
     </div>
   )
