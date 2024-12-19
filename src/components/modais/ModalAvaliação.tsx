@@ -35,9 +35,6 @@ const ModalAvaliação = () => {
                   <select name="professor" id="professor" className="p-2 w-3/4 mb-2 rounded-lg">
                     <option value="" disabled selected>Nome do Professor</option>
                   </select>
-                  <select name="disciplina" id="disciplina" className="p-2 w-3/4 rounded-lg">
-                    <option value="Disciplina" className="" disabled selected>Disciplina</option>
-                  </select>
                 </form>
               <div className="bg-foreground flex flex-col items-center justify-center rounded-md h-4/5 w-11/12">
                 <div className="flex-1 border-black outline-none h-full w-full text-start flex text-wrap rounded-3xl">
