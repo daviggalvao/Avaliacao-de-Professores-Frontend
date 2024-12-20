@@ -32,7 +32,7 @@ export const getComentario = async (id: number): Promise<ComentarioData> => {
 export const updateComentario = async (id: number, dados: UpdateComentario) => {
   try {
     const token = localStorage.getItem("token"); // Retrieve the token from localStorage
-    const response = await api.patch(`avaliacao/${id}`, dados, {
+    const response = await api.patch(`comentario/${id}`, dados, {
       headers: {
         Authorization: `Bearer ${token}`, // Add the Authorization header
       },
@@ -49,7 +49,7 @@ export const updateComentario = async (id: number, dados: UpdateComentario) => {
 export const deleteComentario = async (id: number) => {
   try {
     const token = localStorage.getItem("token"); // Retrieve the token from localStorage
-    const response = await api.delete(`/avaliacao/${id}`, {
+    const response = await api.delete(`/comentario/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`, // Add the Authorization header
       },
