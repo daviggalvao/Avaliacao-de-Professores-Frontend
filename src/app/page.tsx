@@ -60,13 +60,9 @@ export default function Home() {
           <div className="NovosProfessores">
 
             {isSearching ? (
-              filteredProfessores.length > 0 ? (
-                <h1 className="ml-4 text-black text-4xl font-bold my-8">Professores encontrados</h1>
-              ) : (
-                <h1 className="ml-4 text-black text-4xl font-bold my-8">Nenhum professor encontrado</h1>
-              )
+                <h1 className="ml-4 text-black text-4xl font-bold my-8 border-b-2 border-black">Professores encontrados</h1>
             ) : (
-              <h1 className="ml-4 text-black text-4xl font-bold my-8">Novos professores</h1>
+              <h1 className="ml-4 text-black text-4xl font-bold my-8 border-b-2 border-black">Novos professores</h1>
             )}
 
             <div className="bg-sky-100 grid grid-cols-4 ml-4 gap-20">
@@ -92,10 +88,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="TodosProfessores bg-sky-100">
-            <h1 className = "ml-4 text-black font-bold my-8 text-4xl">Todos os Professores</h1>
+          <div className="TodosProfessores bg-sky-100 ml-4">
+            <h1 className = "text-black font-bold my-8 text-4xl border-b-2 border-black">Todos os Professores</h1>
 
-            <div className="bg-sky-100 grid grid-cols-4 ml-4 gap-20">
+            <div className="bg-sky-100 grid grid-cols-4 gap-20">
               {professores.length > 0 ? (
                 professores.map((professor) => (
                   <Professor key={professor.id} {...professor} />

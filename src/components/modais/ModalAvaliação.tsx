@@ -74,7 +74,7 @@ const ModalAvaliação = () => {
                 </form>
               <div className="bg-foreground flex flex-col items-center justify-center rounded-md h-4/5 w-11/12">
                 <div className="flex-1 border-black outline-none h-full w-full text-start flex text-wrap rounded-3xl">
-                  <textarea className="outline-none bg-white resize-none w-full" id="avaliacao" 
+                  <textarea className="outline-none bg-white resize-none w-full rounded-xl" id="avaliacao" 
                   placeholder="Escreva sua avaliação aqui..." value={input.conteudo} onChange={handleConteudoChange} />
                 </div>
                 <br />
