@@ -12,6 +12,7 @@ import Avaliacao from "../entidades/Avaliacao";
 const ModalComentario = ({ avaliacaoID }: { avaliacaoID: number }) => {
   const user = getStorageUser();
   const [open, setOpen] = useState(false);
+
   const [input, setInput] = useState({
     conteudo: "",
     usuarioID: user.id,
@@ -24,6 +25,14 @@ const ModalComentario = ({ avaliacaoID }: { avaliacaoID: number }) => {
       window.location.reload();
     } catch (error) {}
   };
+
+  //const [avalID, setID] = useState(0);
+
+  //setID(AvaliacaoID)
+
+  
+
+
   return (
     <div>
       <button onClick={() => setOpen(!open)}>

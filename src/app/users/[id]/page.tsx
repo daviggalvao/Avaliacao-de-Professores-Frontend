@@ -51,11 +51,11 @@ export default function PerfilAluno() {
                       <Image src={ user?.foto_perfil && typeof user.foto_perfil === "string" ? user.foto_perfil: defaultFoto} 
                       alt="Foto do Usuário" className= "w-32 h-32 border-4 border-black rounded-full mt-5 mb-2" width={50} height={50}/>
                         
-                      {CanShowItem(user)? (
+                      {CanShowItem(user?.id)? (
                         <div className = "flex flex-col mr-10">
                           <ModalPerfil></ModalPerfil>
                           <button    onClick={delRed} 
-                          className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black font-light">Excluir perfil</button>
+                          className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-b-2 border-black font-light">Excluir perfil</button>
                         </div>
                       ): (
                         <div>                                      
@@ -76,7 +76,7 @@ export default function PerfilAluno() {
                         width={25}
                         height={25}
                       />
-                      <h2 className="text-xs mb-1">{user.curso} /</h2>
+                      <h2 className="text-xs mb-1">{user.curso}</h2>
                       <h2 className = "text-xs mb-1">{user.departamento}</h2>
                     </div>
 

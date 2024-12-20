@@ -29,7 +29,7 @@ export const handleLogout = () => {
   window.location.href = "/";
 };
 
-export const CanShowItem = (usuario: UserData): boolean => {
+export const CanShowItem = (usuarioID: number): boolean => {
   const userStorage = getStorageUser();
-  return userStorage?.id === usuario.id;
+  return userStorage?.id === usuarioID;
 };
