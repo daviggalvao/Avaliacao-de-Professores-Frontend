@@ -61,7 +61,9 @@ const Comentario = (Comentario: ComentarioData) => {
 
       {CanShowItem(Comentario.usuarioID) ? (
         <div className="flex flex-row  gap-2 mr-10">
-          <ModalEditComentario id={Comentario.id}></ModalEditComentario>
+          <ModalEditComentario
+            ComentarioID={Comentario.id}
+          ></ModalEditComentario>
         </div>
       ) : (
         <div></div>

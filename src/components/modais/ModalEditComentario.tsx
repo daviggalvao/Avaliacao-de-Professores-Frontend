@@ -9,7 +9,7 @@ import pencil from "../../assets/pencil.svg";
 import { getStorageUser } from "../../utils/auth";
 import { updateComentario, deleteComentario } from "@/app/_api/comentarioApi";
 
-const ModalEditAvaliação = ({ id }: { id: number }) => {
+const ModalEditComentario = ({ ComentarioID }: { ComentarioID: number }) => {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState({
     conteudo: "",
@@ -17,15 +17,15 @@ const ModalEditAvaliação = ({ id }: { id: number }) => {
 
   const delCom = async () => {
     try {
-      await deleteComentario(id);
+      await deleteComentario(ComentarioID);
       window.location.reload();
     } catch (error) {}
   };
 
-  const editAvaliação = async () => {
+  const editComentario = async () => {
     try {
-      const response = await updateComentario(id, input);
-
+      const response = await updateComentario(ComentarioID, input);
+      window.location.reload();
       if (response && response.data) {
         console.log("Avaliação updated successfully:", response.data);
       } else {
@@ -71,7 +71,7 @@ const ModalEditAvaliação = ({ id }: { id: number }) => {
             </div>
             <div className="flex">
               <button
-                onClick={editAvaliação}
+                onClick={editComentario}
                 className="text-white bg-[#00FFFF] mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
               >
                 Editar
@@ -98,4 +98,4 @@ const ModalEditAvaliação = ({ id }: { id: number }) => {
   );
 };
 
-export default ModalEditAvaliação;
+export default ModalEditComentario;
