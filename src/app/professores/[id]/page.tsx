@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import defaultFoto from '../../../assets/fotodefault.svg';  // Caminho para a imagem local
+import defaultFoto from '../../../assets/fotodefaultprof.svg';  // Caminho para a imagem local
 import courseUser from '../../../assets/courseuser.svg';
 import leftArrow from '../../../assets/leftarrow.svg';
 import book from '../../../assets/book.svg';

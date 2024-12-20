@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ComentarioData } from "@/types/Comentario";
 import { hookUserID } from '@/hooks/hookUser';
 import { hookAvaliacaoID } from "@/hooks/hookAvaliacao";
-import defaultFoto from '../../assets/fotodefault.svg';
+import defaultFoto from '../../assets/fotodefaultuser.svg';
 import Link from "next/link";
 
 const Comentario = ( Comentario : ComentarioData) => {
