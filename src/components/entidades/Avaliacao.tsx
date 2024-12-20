@@ -56,10 +56,10 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
               })
             : "Data não disponível"}
         </h4>
-      
-      <Link href={`/professores/${Avaliacao.professorID}`}>
-        <h4 className="text-xs font-light">{Avaliacao.professor.nome}</h4>
-      </Link>
+
+        <Link href={`/professores/${Avaliacao.professorID}`}>
+          <h4 className="text-xs font-light">{Avaliacao.professor.nome}</h4>
+        </Link>
         <h4 className="text-xs font-light">{Avaliacao.disciplina.nome}</h4>
       </div>
 
@@ -80,12 +80,14 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
         </Link>
 
         {CanShowItem(Avaliacao.usuarioID) ? (
-          <div className="flex flex-col mr-10">
-            <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
+          <div className="flex flex-row  gap-2 mr-10">
             <ModalEditAvaliação avaliacaoID={Avaliacao.id}></ModalEditAvaliação>
+            <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
           </div>
         ) : (
-          <div></div>
+          <div className="flex flex-row mr-30">
+            <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
+          </div>
         )}
       </div>
     </div>
