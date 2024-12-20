@@ -117,7 +117,7 @@ export default function Perfilprofessor() {
                     <Avaliacao key={avaliacao.id} {...avaliacao} />
                   ))
                 ) : (
-                  <h2>aaa</h2>
+                  <h2>Sem avaliações encontradas sobre esse professor.</h2>
                 )} 
             </div>
           </div>

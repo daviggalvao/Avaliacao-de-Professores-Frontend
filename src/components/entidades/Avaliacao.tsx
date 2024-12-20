@@ -3,13 +3,23 @@ import { AvaliacaoData } from '../../types/Avaliacao';
 import { hookUserID } from '@/hooks/hookUser';
 import Link from "next/link";
 import Image from "next/image";
-import styles from '../aa_extra/styles/feed.module.css';
+import lixeira from '../../assets/lixo.svg';
 import commentUser from '../../assets/comment.svg';
+import ModalComentario from '../modais/ModalComentario';
+import ModalEditComentario from '../modais/ModalEditComentario';
 import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a imagem local
+import { deleteAvaliacao } from '@/app/_api/avaliacaoApi';
 
 const Avaliacao = ( Avaliacao : AvaliacaoData) => {
   const user = hookUserID(Avaliacao.usuarioID)
   const comentariosCount = Array.isArray(Avaliacao.Comentarios) ? Avaliacao.Comentarios.length : 0;
+
+  // arrumar a funcao de apagar a avalicao
+  const delAv = async () => {
+      try {
+        await deleteAvaliacao(Avaliacao.id);
+      } catch (error) {}
+  };
 
   return (
     <div className = "bg-green-500 rounded-3xl w-4/5 mt-5 mb-5">
@@ -50,6 +60,8 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
         <Link href={`/Avaliacao/${Avaliacao.id}`}>
           <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
         </Link>
+        <ModalComentario></ModalComentario>
+        <ModalEditComentario></ModalEditComentario>
       </div>
 
     </div>
