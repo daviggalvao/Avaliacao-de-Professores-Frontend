@@ -57,7 +57,7 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
       
       <div className = "ml-12 flex items-center gap-2 mb-4">
         <Image src = {commentUser} alt = "icone comentário" className = ""  width={25} height={25}/>
-        <Link href={`/Avaliacao/${Avaliacao.id}`}>
+        <Link href={`/Avaliacoes/${Avaliacao.id}`}>
           <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
         </Link>
         <ModalComentario></ModalComentario>
