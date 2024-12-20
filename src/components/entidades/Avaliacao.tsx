@@ -19,6 +19,7 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
     ? Avaliacao.Comentarios.length
     : 0;
 
+  // arrumar a funcao de apagar a avalicao
   const delAv = async () => {
     try {
       await deleteAvaliacao(Avaliacao.id);
@@ -40,40 +41,26 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
           height={25}
         />
 
-        <div className="flex items-center gap-2">
-          <Image
-            src={
-              user?.foto_perfil && typeof user.foto_perfil === "string"
-                ? user.foto_perfil
-                : defaultFoto
-            }
-            alt="Foto do Usuário"
-            className=" ml-2 w-10 h-10 border-2 border-black rounded-full mt-4 mb-2"
-            width={25}
-            height={25}
-          />
+        <h3 className="text-xs font-bold">{user?.nome ?? "abc "}</h3>
 
-          <h3 className="text-xs font-bold">{user?.nome ?? "abc"}</h3>
+        <h4 className="text-xs font-light">
+          {Avaliacao.createdAt
+            ? new Date(Avaliacao.createdAt).toLocaleString("pt-BR", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              })
+            : "Data não disponível"}
+        </h4>
 
-          <h4 className="text-xs font-light">
-            {Avaliacao.createdAt
-              ? new Date(Avaliacao.createdAt).toLocaleString("pt-BR", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                })
-              : "Data não disponível"}
-          </h4>
-
-          <h4 className="text-xs font-light">{Avaliacao.professor.nome}</h4>
-          <h4 className="text-xs font-light">{Avaliacao.disciplina.nome}</h4>
-        </div>
+        <h4 className="text-xs font-light">{Avaliacao.professor.nome}</h4>
+        <h4 className="text-xs font-light">{Avaliacao.disciplina.nome}</h4>
       </div>
 
-      <p className="ml-12 font-medium text-sm mr-2">{Avaliacao.conteudo}</p>
+      <p className=" ml-12 font-medium text-sm mr-2">{Avaliacao.conteudo}</p>
 
       <div className="ml-12 flex items-center gap-2 mb-4">
         <Image
@@ -91,8 +78,8 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
 
         {CanShowItem(Avaliacao.usuarioID) ? (
           <div className="flex flex-col mr-10">
-            <ModalComentario avaliacaoID={Avaliacao.id} />
-            <ModalEditAvaliação avaliacaoID={Avaliacao.id} />
+            <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
+            <ModalEditAvaliação avaliacaoID={Avaliacao.id}></ModalEditAvaliação>
           </div>
         ) : (
           <div></div>
