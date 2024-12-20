@@ -6,7 +6,7 @@ import { hookAvaliacaoID } from "@/hooks/hookAvaliacao";
 import { CanShowItem } from "@/utils/auth";
 import ModalComentario from "../modais/ModalComentario";
 import ModalEditComentario from "../modais/ModalEditComentario";
-import defaultFoto from '../../assets/fotodefault.svg';
+import defaultFoto from '../../assets/fotodefaultuser.svg';
 import Link from "next/link";
 
 const Comentario = ( Comentario : ComentarioData) => {
