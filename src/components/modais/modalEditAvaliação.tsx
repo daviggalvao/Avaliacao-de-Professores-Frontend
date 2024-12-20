@@ -5,25 +5,35 @@ import "../../app/globals.css";
 import Image from "next/image";
 import commentUser from "../../assets/comment.svg";
 import pencil from "../../assets/pencil.svg";
-import { postComentario } from "../../app/_api/comentarioApi";
+import { updateAvaliacao } from "../../app/_api/avaliacaoApi";
 import { getStorageUser } from "../../utils/auth";
-import Avaliacao from "../entidades/Avaliacao";
 
-const ModalComentario = ({ avaliacaoID }: { avaliacaoID: number }) => {
-  const user = getStorageUser();
+const ModalEditAvaliação = ({ avaliacaoID }: { avaliacaoID: number }) => {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState({
     conteudo: "",
-    usuarioID: user.id,
-    avaliacaoID: avaliacaoID,
   });
 
-  const createComentário = async () => {
+  const editAvaliação = async () => {
     try {
-      await postComentario(input);
+      const response = await updateAvaliacao(avaliacaoID, input);
       window.location.reload();
-    } catch (error) {}
+
+      if (response && response.data) {
+        console.log("Avaliação updated successfully:", response.data);
+      } else {
+        console.error("No data returned from updateAvaliacao");
+      }
+      setOpen(false);
+    } catch (error: any) {
+      if (error.response) {
+        console.error("Error updating avaliação:", error.response.data);
+      } else {
+        console.error("Error updating avaliação:", error.message);
+      }
+    }
   };
+
   return (
     <div>
       <button onClick={() => setOpen(!open)}>
@@ -54,10 +64,16 @@ const ModalComentario = ({ avaliacaoID }: { avaliacaoID: number }) => {
             </div>
             <div className="flex">
               <button
-                onClick={createComentário}
-                className="text-white bg-[#00FFFF] mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
+                onClick={editAvaliação}
+                className="text-white bg-green-900 mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
               >
-                Comentar
+                Editar
+              </button>
+              <button
+                onClick={() => setOpen(!open)}
+                className="text-white ml-56 bg-[#00FFFF] mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
+              >
+                Apagar
               </button>
               <button
                 onClick={() => setOpen(!open)}
@@ -75,4 +91,4 @@ const ModalComentario = ({ avaliacaoID }: { avaliacaoID: number }) => {
   );
 };
 
-export default ModalComentario;
+export default ModalEditAvaliação;

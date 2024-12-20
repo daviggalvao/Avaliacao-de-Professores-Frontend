@@ -9,6 +9,7 @@ import ModalComentario from "../modais/ModalComentario";
 import ModalEditComentario from "../modais/ModalEditComentario";
 import defaultFoto from "../../assets/fotodefault.svg"; // Caminho para a imagem local
 import { deleteAvaliacao } from "@/app/_api/avaliacaoApi";
+import ModalEditAvaliação from "../modais/modalEditAvaliação";
 
 const Avaliacao = (Avaliacao: AvaliacaoData) => {
   const user = hookUserID(Avaliacao.usuarioID);
@@ -73,7 +74,7 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
           </p>
         </Link>
         <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
-        <ModalEditComentario></ModalEditComentario>
+        <ModalEditAvaliação avaliacaoID={Avaliacao.id}></ModalEditAvaliação>
       </div>
     </div>
   );
