@@ -35,7 +35,7 @@ export default function PerfilAluno() {
           <div>
             <Header/>
               
-            <div className = "flex justify-center  flex-1 bg-white">
+            <div className = "flex justify-center  flex-2 bg-white">
               <div className = "">
                 <Link href = "/">
                   <button>
@@ -44,18 +44,18 @@ export default function PerfilAluno() {
                 </Link>
               </div>
 
-              <div className = "bg-[#71FDC5] w-1/3 border-2 border-green-400 flex flex-col min-h-screen rounded-xl">
+              <div className = "bg-[#71FDC5] w-1/3 border-2 border-green-400 flex flex-col min-h-screen rounded-xl mt-2">
                 <div className = "flex flex-col justify-center bg-white-100 w-full h-1/4 border-b-2 border-green-600">
                   <div className = "ml-10">
                     <div className = "flex items-center justify-between w-full">
                       <Image src={ user?.foto_perfil && typeof user.foto_perfil === "string" ? user.foto_perfil: defaultFoto} 
-                      alt="Foto do Usuário" className= "w-32 h-32 border-4 border-black rounded-full mt-4 mb-2" width={50} height={50}/>
+                      alt="Foto do Usuário" className= "w-32 h-32 border-4 border-black rounded-full mt-5 mb-2" width={50} height={50}/>
                         
                       {CanShowItem(user?.id)? (
                         <div className = "flex flex-col mr-10">
                           <ModalPerfil></ModalPerfil>
                           <button    onClick={delRed} 
-                          className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black font-light">Excluir perfil</button>
+                          className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-b-2 border-black font-light">Excluir perfil</button>
                         </div>
                       ): (
                         <div>                                      

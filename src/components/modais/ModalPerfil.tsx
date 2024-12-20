@@ -46,7 +46,7 @@ const ModalPerfil = () => {
 
   return (
     <>
-        <button onClick={() => setOpen(!open)} className = "text-black bg-green-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-2 border-black mb-1 font-light">Editar perfil</button>
+        <button onClick={() => setOpen(!open)} className = "text-black bg-green-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-b-2 border-black mb-1 font-light">Editar perfil</button>
         
         {open ? (
           <div className={"h-full w-full bg-black/40 fixed top-0 left-0 flex flex-col justify-center items-center"}>
