@@ -1,6 +1,7 @@
 import api from "../../utils/api";
 import { UserData } from "../../types/User";
 import { UpdateUser } from "../../types/User";
+import { getToken } from "@/utils/auth";
 
 export const postUser = async (dados: UserData) => {
   const response = await api.post("/user", dados);
@@ -22,7 +23,21 @@ export const getUserByEmail = async (email: string): Promise<UserData> => {
   return response.data;
 };
 
-export const updateUser = async (id: number, dados: UpdateUser) => {
+export const updateUser = async (id: number, dados: UpdateUser ) => {
+  try {
+    const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+    const response = await api.patch(`user/${id}`, dados, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Add the Authorization header
+      },
+    });
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    if (error.response && error.response.status === 401) {
+      console.error("Unauthorized: Please check your credentials.");
+    }
+  }
+
   const response = await api.patch(`/user/${id}`, dados);
   return response.data;
 };

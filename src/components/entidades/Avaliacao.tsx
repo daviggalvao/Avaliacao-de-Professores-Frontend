@@ -38,8 +38,8 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
             : 'Data não disponível'}
          </h4>
 
-        <h4 className = "text-xs font-light">{Avaliacao.professor}</h4>
-        <h4 className = "text-xs font-light">{Avaliacao.disciplina}</h4>
+        <h4 className = "text-xs font-light">{Avaliacao.professor.nome}</h4>
+        <h4 className = "text-xs font-light">{Avaliacao.disciplina.nome}</h4>
 
       </div>
 

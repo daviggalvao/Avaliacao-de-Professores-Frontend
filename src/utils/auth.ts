@@ -28,3 +28,8 @@ export const handleLogout = () => {
   // Redireciona para a página inicial
   window.location.href = "/";
 };
+
+export const CanShowItem = (usuario: UserData): boolean => {
+  const userStorage = getStorageUser();
+  return userStorage?.id === usuario.id;
+};

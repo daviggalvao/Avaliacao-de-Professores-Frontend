@@ -1,12 +1,19 @@
 import { ComentarioData } from '../types/Comentario'
+import { ProfessorData } from './Professor';
+import { DisciplinaData } from './Disciplina';
 
 export interface AvaliacaoData {
   id?: number;
 
   conteudo: string;  
+
   professorID: number; 
-  usuarioID: number;
+  professor: ProfessorData;
+
   disciplinaID: number; 
+  disciplina: DisciplinaData;
+
+  usuarioID: number;
   Comentarios: ComentarioData[];
 
   createdAt?: Date;

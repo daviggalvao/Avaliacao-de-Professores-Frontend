@@ -18,6 +18,7 @@ export default function SignIn() {
     senha: "",
     curso: "",
     departamento: "",
+    foto_perfil: "",
   });
 
   const createUser = async () => {
