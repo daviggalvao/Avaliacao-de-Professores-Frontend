@@ -8,7 +8,7 @@ import lixeira from "../../assets/lixo.svg";
 import commentUser from "../../assets/comment.svg";
 import ModalComentario from "../modais/ModalComentario";
 import ModalEditComentario from "../modais/ModalEditComentario";
-import defaultFoto from "../../assets/fotodefault.svg"; // Caminho para a imagem local
+import defaultFoto from "../../assets/fotodefaultuser.svg"; // Caminho para a imagem local
 import { deleteAvaliacao } from "@/app/_api/avaliacaoApi";
 import { CanShowItem } from "@/utils/auth";
 import ModalEditAvaliação from "../modais/modalEditAvaliação";

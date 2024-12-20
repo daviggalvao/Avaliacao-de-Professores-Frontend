@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-import defaultFoto from '../../../assets/fotodefault.svg';  // Caminho para a imagem local
+import defaultFoto from '../../../assets/fotodefaultuser.svg';  // Caminho para a imagem local
 import emailUser from '../../../assets/email.svg';
 import courseUser from '../../../assets/courseuser.svg';
 import leftArrow from '../../../assets/leftarrow.svg';

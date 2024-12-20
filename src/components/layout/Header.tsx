@@ -7,7 +7,7 @@ import { getStorageUser, IsAuthenticated, handleLogout } from "../../utils/auth"
 import Image from "next/image";
 
 import logoUnb from "../../assets/logounb.svg"; // Caminho para a imagem local
-import defaultFoto from "../../assets/fotodefault.svg"; // Caminho para a imagem local
+import defaultFoto from "../../assets/fotodefaultuser.svg"; // Caminho para a imagem local
 import loginOut from "../../assets/loginout.svg"; // Caminho para a imagem local
 
 import "../../app/globals.css";

@@ -5,7 +5,7 @@ import { DisciplinaData } from '../../types/Disciplina';
 import Link from "next/link";
 import Image from "next/image";
 import styles from '../../aa_extra/styles/feed.module.css';
-import defaultFoto from '../../assets/fotodefault.svg';
+import defaultFoto from '../../assets/fotodefaultprof.svg';
 import { getAllDisciplinas } from '../../app/_api/disciplinaApi';
 
 const Professor = ( Professor : ProfessorData) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import defaultFoto from '../../assets/fotodefault.svg';
+import defaultFoto from '../../assets/fotodefaultuser.svg';
 import { getStorageUser } from "@/utils/auth";
 import { updateUser } from "@/app/_api/userApi";
 
