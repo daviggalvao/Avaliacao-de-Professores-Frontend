@@ -36,7 +36,7 @@ export default function Home() {
     <div>
       <Header/>
 
-      <div className="bg-sky-100 h-screen w-screen">
+      <div className="bg-sky-100 w-screen min-h-screen">
           <div className="bg-sky-100 ml-4 flex justify-between items-center">
             {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
             <div className="mt-4 flex">
@@ -50,35 +50,37 @@ export default function Home() {
             </div>
             <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 mr-8  w-60 h-8 rounded-lg"/>
           </div>
-        <div className="NovosProfessores">
-          <h1 className="ml-4 text-black font-bold my-8">Novos Professores</h1>
+        <div className = "flex flex-col items-center">
+          <div className="NovosProfessores">
+            <h1 className="ml-4 text-black text-4xl font-bold my-8">Novos Professores</h1>
 
-          <div className="bg-sky-100 grid grid-cols-4 ml-4">
-            {professores.length > 0 ? (
-              professores.filter((professor) => { 
-                  return new Date(professor.createdAt) >= twoDaysAgo;
-                }
-              ).map((professor) => (
-                <Professor key={professor.id} {...professor} />
+            <div className="bg-sky-100 grid grid-cols-4 ml-4 gap-20">
+              {professores.length > 0 ? (
+                professores.filter((professor) => { 
+                    return new Date(professor.createdAt) >= twoDaysAgo;
+                  }
+                ).map((professor) => (
+                  <Professor key={professor.id} {...professor} />
+                  )
                 )
-              )
-            ) : (
-              <p className="ml-4 text-black">Nenhum professor encontrado.</p>
-            )}
+              ) : (
+                <p className="ml-4 text-black">Nenhum professor encontrado.</p>
+              )}
+            </div>
           </div>
-        </div>
 
-        <div className="TodosProfessores bg-sky-100">
-          <h1 className = "ml-4 text-black font-bold my-8">Todos os Professores</h1>
+          <div className="TodosProfessores bg-sky-100">
+            <h1 className = "ml-4 text-black font-bold my-8 text-4xl">Todos os Professores</h1>
 
-          <div className="bg-sky-100 grid grid-cols-4 ml-4">
-            {professores.length > 0 ? (
-              professores.map((professor) => (
-                <Professor key={professor.id} {...professor} />
-              ))
-            ) : (
-              <p className="ml-4 text-black">Nenhum professor encontrado.</p>
-            )}
+            <div className="bg-sky-100 grid grid-cols-4 ml-4 gap-20">
+              {professores.length > 0 ? (
+                professores.map((professor) => (
+                  <Professor key={professor.id} {...professor} />
+                ))
+              ) : (
+                <p className="ml-4 text-black">Nenhum professor encontrado.</p>
+              )}
+            </div>
           </div>
         </div>
       </div>

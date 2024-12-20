@@ -40,7 +40,7 @@ const Professor = ( Professor : ProfessorData) => {
         </Link>
       </div>
 
-      <div className='disciplinaProfessor font-light'>
+      <div className='disciplinaProfessor font-light text-sm truncate'>
         <p>{nomeDisciplina}</p>
       </div>
     </div>
