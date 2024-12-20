@@ -5,7 +5,7 @@ import "../../app/globals.css";
 import Image from "next/image";
 import commentUser from "../../assets/comment.svg";
 import pencil from "../../assets/pencil.svg";
-import { updateAvaliacao } from "../../app/_api/avaliacaoApi";
+import { deleteAvaliacao, updateAvaliacao } from "../../app/_api/avaliacaoApi";
 import { getStorageUser } from "../../utils/auth";
 
 const ModalEditAvaliação = ({ avaliacaoID }: { avaliacaoID: number }) => {
@@ -13,6 +13,13 @@ const ModalEditAvaliação = ({ avaliacaoID }: { avaliacaoID: number }) => {
   const [input, setInput] = useState({
     conteudo: "",
   });
+
+  const delAv = async () => {
+    try {
+      await deleteAvaliacao(avaliacaoID);
+      window.location.reload();
+    } catch (error) {}
+  };
 
   const editAvaliação = async () => {
     try {
@@ -65,19 +72,19 @@ const ModalEditAvaliação = ({ avaliacaoID }: { avaliacaoID: number }) => {
             <div className="flex">
               <button
                 onClick={editAvaliação}
-                className="text-white bg-green-900 mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
+                className="text-white bg-[#00FFFF] mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
               >
                 Editar
               </button>
               <button
-                onClick={() => setOpen(!open)}
-                className="text-white ml-56 bg-[#00FFFF] mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
+                onClick={delAv}
+                className="text-white ml-56  bg-red-400  mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
               >
                 Apagar
               </button>
               <button
                 onClick={() => setOpen(!open)}
-                className="text-white ml-56 bg-[#00FFFF] mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
+                className="text-white ml-56  bg-[#00FFFF]  mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
               >
                 Sair
               </button>

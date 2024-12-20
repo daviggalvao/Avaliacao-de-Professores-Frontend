@@ -35,6 +35,18 @@ export const updateAvaliacao = async (id: number, dados: UpdateAvaliacao) => {
 };
 
 export const deleteAvaliacao = async (id: number) => {
-  const response = await api.delete(`/avaliacao/${id}`);
-  return response.data;
+  try {
+    const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+    const response = await api.delete(`/avaliacao/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Add the Authorization header
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    if (error.response && error.response.status === 401) {
+      console.error("Unauthorized: Please check your credentials.");
+    }
+  }
 };
