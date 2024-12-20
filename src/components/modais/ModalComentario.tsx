@@ -9,6 +9,12 @@ import pencil from '../../assets/pencil.svg';
 
 const ModalComentario = () => {
   const [open, setOpen] = useState(false);
+  //const [avalID, setID] = useState(0);
+
+  //setID(AvaliacaoID)
+
+  
+
   return (
     <div>
       <button onClick={() => setOpen(!open)}>

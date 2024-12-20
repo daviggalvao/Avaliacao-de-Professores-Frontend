@@ -9,6 +9,7 @@ import ModalComentario from '../modais/ModalComentario';
 import ModalEditComentario from '../modais/ModalEditComentario';
 import defaultFoto from '../../assets/fotodefault.svg';  // Caminho para a imagem local
 import { deleteAvaliacao } from '@/app/_api/avaliacaoApi';
+import { CanShowItem } from '@/utils/auth';
 
 const Avaliacao = ( Avaliacao : AvaliacaoData) => {
   const user = hookUserID(Avaliacao.usuarioID)
@@ -60,10 +61,18 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
         <Link href={`/Avaliacoes/${Avaliacao.id}`}>
           <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
         </Link>
-        <ModalComentario></ModalComentario>
-        <ModalEditComentario></ModalEditComentario>
-      </div>
+            
+        {CanShowItem(Avaliacao.usuarioID)? (
+          <div className = "flex flex-col mr-10">
+            <ModalComentario></ModalComentario>
+            <ModalEditComentario></ModalEditComentario>
+          </div>
+        ): (
+          <div>                                      
 
+          </div>
+        )}
+      </div>
     </div>
   )
 }

@@ -51,7 +51,7 @@ export default function PerfilAluno() {
                       <Image src={ user?.foto_perfil && typeof user.foto_perfil === "string" ? user.foto_perfil: defaultFoto} 
                       alt="Foto do Usuário" className= "w-32 h-32 border-4 border-black rounded-full mt-4 mb-2" width={50} height={50}/>
                         
-                      {CanShowItem(user)? (
+                      {CanShowItem(user?.id)? (
                         <div className = "flex flex-col mr-10">
                           <ModalPerfil></ModalPerfil>
                           <button    onClick={delRed} 
