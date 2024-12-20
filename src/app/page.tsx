@@ -73,7 +73,9 @@ export default function Home() {
                       <Professor key={professor.id} {...professor} />
                     ))
                 ) : (
-                  <p className="text-black">Nenhum professor encontrado.</p>
+                  <div className="col-span-4 flex justify-center items-center">
+                    <p className="text-black">Nenhum professor encontrado.</p>
+                  </div>
                 )
               ) : (
                 professores.length > 0? (
