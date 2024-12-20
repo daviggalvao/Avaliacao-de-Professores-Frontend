@@ -2,10 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { ComentarioData } from "@/types/Comentario";
 import { hookUserID } from '@/hooks/hookUser';
+import { hookAvaliacaoID } from "@/hooks/hookAvaliacao";
 import defaultFoto from '../../assets/fotodefault.svg';
+import Link from "next/link";
 
 const Comentario = ( Comentario : ComentarioData) => {
     const user = hookUserID(Comentario.usuarioID)
+    const aval = hookAvaliacaoID(Comentario.avaliacaoID)
 
     return (
       <div className = "bg-green-500 rounded-3xl w-4/5 mt-5 mb-5">
@@ -19,7 +22,7 @@ const Comentario = ( Comentario : ComentarioData) => {
             } alt="Foto do Usuário" 
             className= " ml-2 w-10 h-10 border-2 border-black rounded-full mt-4 mb-2" width={25} height={25}/>
   
-          <h3 className = "text-xs font-bold">{Comentario?.nome}</h3>
+          <h3 className = "text-xs font-bold">{user?.nome}</h3>
   
           <h4 className="text-xs font-light">
             {Comentario.createdAt
@@ -34,15 +37,16 @@ const Comentario = ( Comentario : ComentarioData) => {
               : 'Data não disponível'}
            </h4>
   
-          <h4 className = "text-xs font-light">{Comentario.professor.nome}</h4>
-          <h4 className = "text-xs font-light">{Comentario.disciplina.nome}</h4>
+          <h4 className = "text-xs font-light">{aval?.professor.nome}</h4>
+          <h4 className = "text-xs font-light">{aval?.disciplina.nome}</h4>
   
         </div>
   
         <p className=" ml-12 font-medium text-sm mr-2">{Comentario.conteudo}</p>
         
-        <div className = "ml-12 flex items-center gap-2 mb-4">
+        {/*<div className = "ml-12 flex items-center gap-2 mb-4">
           <Image src = {commentUser} alt = "icone comentário" className = ""  width={25} height={25}/>
+
           <Link href={`/Avaliacoes/${Comentario.id}`}>
             <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
           </Link>
@@ -57,7 +61,7 @@ const Comentario = ( Comentario : ComentarioData) => {
   
             </div>
           )}
-        </div>
+        </div>*/}
       </div>
     )
   }
