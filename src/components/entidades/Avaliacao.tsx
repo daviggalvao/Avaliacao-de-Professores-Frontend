@@ -34,7 +34,7 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
           } alt="Foto do Usuário" 
           className= " ml-2 w-10 h-10 border-2 border-black rounded-full mt-4 mb-2" width={25} height={25}/>
 
-        <h3 className = "text-xs font-bold">{user?.nome}</h3>
+        <h3 className = "text-xs font-bold">{user?.nome ?? "abc "}</h3>
 
         <h4 className="text-xs font-light">
           {Avaliacao.createdAt
@@ -47,7 +47,7 @@ const Avaliacao = ( Avaliacao : AvaliacaoData) => {
                 hour12: false,
               })
             : 'Data não disponível'}
-         </h4>
+         </h4>  
 
         <h4 className = "text-xs font-light">{Avaliacao.professor.nome}</h4>
         <h4 className = "text-xs font-light">{Avaliacao.disciplina.nome}</h4>

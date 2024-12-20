@@ -36,11 +36,6 @@ export default function Comentario() {
 
                   <div className = "bg-[#71FDC5] w-1/3 border-2 border-green-400 flex flex-col min-h-screen rounded-xl">
 
-                  {/* fazer mostrar comentarios */}
-                  <div className="flex flex-col flex-1 items-center">
-                  {user.Avaliacoes?.map((avaliacao) => (
-                      <Avaliacao key={avaliacao.id} {...avaliacao} />
-                  ))}
                   </div>
         </div>
       </div>

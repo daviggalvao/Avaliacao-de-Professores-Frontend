@@ -76,7 +76,7 @@ export default function PerfilAluno() {
                         width={25}
                         height={25}
                       />
-                      <h2 className="text-xs mb-1">{user.curso} /</h2>
+                      <h2 className="text-xs mb-1">{user.curso}</h2>
                       <h2 className = "text-xs mb-1">{user.departamento}</h2>
                     </div>
 
