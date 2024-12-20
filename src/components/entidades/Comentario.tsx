@@ -3,6 +3,9 @@ import Image from "next/image";
 import { ComentarioData } from "@/types/Comentario";
 import { hookUserID } from '@/hooks/hookUser';
 import { hookAvaliacaoID } from "@/hooks/hookAvaliacao";
+import { CanShowItem } from "@/utils/auth";
+import ModalComentario from "../modais/ModalComentario";
+import ModalEditComentario from "../modais/ModalEditComentario";
 import defaultFoto from '../../assets/fotodefault.svg';
 import Link from "next/link";
 
@@ -44,16 +47,16 @@ const Comentario = ( Comentario : ComentarioData) => {
   
         <p className=" ml-12 font-medium text-sm mr-2">{Comentario.conteudo}</p>
         
-        {/*<div className = "ml-12 flex items-center gap-2 mb-4">
-          <Image src = {commentUser} alt = "icone comentário" className = ""  width={25} height={25}/>
+        <div className = "ml-12 flex items-center gap-2 mb-4">
+          {/*<Image src = {commentUser} alt = "icone comentário" className = ""  width={25} height={25}/>
 
           <Link href={`/Avaliacoes/${Comentario.id}`}>
             <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
-          </Link>
+          </Link>*/}
               
           {CanShowItem(Comentario.usuarioID)? (
             <div className = "flex flex-col mr-10">
-              <ModalComentario></ModalComentario>
+              {/*<ModalComentario avaliacaoID={aval?.id}></ModalComentario>*/}
               <ModalEditComentario></ModalEditComentario>
             </div>
           ): (
@@ -61,7 +64,7 @@ const Comentario = ( Comentario : ComentarioData) => {
   
             </div>
           )}
-        </div>*/}
+        </div>
       </div>
     )
   }
