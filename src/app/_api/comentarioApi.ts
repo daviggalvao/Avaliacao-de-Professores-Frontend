@@ -30,11 +30,35 @@ export const getComentario = async (id: number): Promise<ComentarioData> => {
 };
 
 export const updateComentario = async (id: number, dados: UpdateComentario) => {
-  const response = await api.patch(`/comentario/${id}`, dados);
-  return response.data;
+  try {
+    const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+    const response = await api.patch(`avaliacao/${id}`, dados, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Add the Authorization header
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    if (error.response && error.response.status === 401) {
+      console.error("Unauthorized: Please check your credentials.");
+    }
+  }
 };
 
 export const deleteComentario = async (id: number) => {
-  const response = await api.delete(`/comentario/${id}`);
-  return response.data;
+  try {
+    const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+    const response = await api.delete(`/avaliacao/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Add the Authorization header
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    if (error.response && error.response.status === 401) {
+      console.error("Unauthorized: Please check your credentials.");
+    }
+  }
 };
