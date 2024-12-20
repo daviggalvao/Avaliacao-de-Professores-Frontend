@@ -81,8 +81,8 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
 
         {CanShowItem(Avaliacao.usuarioID) ? (
           <div className="flex flex-row  gap-2 mr-10">
-            <ModalEditAvaliação avaliacaoID={Avaliacao.id}></ModalEditAvaliação>
             <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
+            <ModalEditAvaliação avaliacaoID={Avaliacao.id}></ModalEditAvaliação>
           </div>
         ) : (
           <div className="flex flex-row mr-30">
