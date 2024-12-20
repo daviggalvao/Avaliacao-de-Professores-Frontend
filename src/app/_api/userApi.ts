@@ -23,7 +23,7 @@ export const getUserByEmail = async (email: string): Promise<UserData> => {
   return response.data;
 };
 
-export const updateUser = async (id: number, dados: UpdateUser ) => {
+export const updateUser = async (id: number, dados: UpdateUser) => {
   try {
     const token = localStorage.getItem("token"); // Retrieve the token from localStorage
     const response = await api.patch(`user/${id}`, dados, {
@@ -31,15 +31,13 @@ export const updateUser = async (id: number, dados: UpdateUser ) => {
         Authorization: `Bearer ${token}`, // Add the Authorization header
       },
     });
+    return response.data;
   } catch (error) {
     console.error("Error deleting user:", error);
     if (error.response && error.response.status === 401) {
       console.error("Unauthorized: Please check your credentials.");
     }
   }
-
-  const response = await api.patch(`/user/${id}`, dados);
-  return response.data;
 };
 
 export const deleteUser = async (userId: number) => {
