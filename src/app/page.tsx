@@ -48,7 +48,7 @@ export default function Home() {
                   </Link>
                 )}
             </div>
-            <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 mr-8  w-60 h-8 rounded-lg"/>
+            <input type="input" placeholder="Buscar Professor(a)" className="bg-white-100 mr-8  w-60 h-8 rounded-lg"/>
           </div>
         <div className = "flex flex-col items-center">
           <div className="NovosProfessores">
