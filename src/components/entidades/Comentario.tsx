@@ -3,7 +3,12 @@ import Image from "next/image";
 import { ComentarioData } from "@/types/Comentario";
 import { hookUserID } from "@/hooks/hookUser";
 import { hookAvaliacaoID } from "@/hooks/hookAvaliacao";
-import defaultFoto from "../../assets/fotodefault.svg";
+
+import { CanShowItem } from "@/utils/auth";
+import ModalComentario from "../modais/ModalComentario";
+import ModalEditComentario from "../modais/ModalEditComentario";
+import defaultFoto from '../../assets/fotodefault.svg';
+
 import Link from "next/link";
 import { CanShowItem } from "@/utils/auth";
 import ModalEditComentario from "../modais/ModalEditComentario";
@@ -18,46 +23,45 @@ const Comentario = (Comentario: ComentarioData) => {
         <Image
           src={
             user?.foto_perfil && typeof user.foto_perfil === "string"
-              ? user.foto_perfil
-              : defaultFoto
-          }
-          alt="Foto do Usuário"
-          className=" ml-2 w-10 h-10 border-2 border-black rounded-full mt-4 mb-2"
-          width={25}
-          height={25}
-        />
 
-        <h3 className="text-xs font-bold">{user?.nome}</h3>
+            ? user.foto_perfil
+            : defaultFoto
+            } alt="Foto do Usuário" 
+            className= " ml-2 w-10 h-10 border-2 border-black rounded-full mt-4 mb-2" width={25} height={25}/>
+  
+          <h3 className = "text-xs font-bold">{user?.nome}</h3>
+  
+          <h4 className="text-xs font-light">
+            {Comentario.createdAt
+              ? new Date(Comentario.createdAt).toLocaleString('pt-BR', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: false,
+                })
+              : 'Data não disponível'}
+           </h4>
+  
+          <h4 className = "text-xs font-light">{aval?.professor.nome}</h4>
+          <h4 className = "text-xs font-light">{aval?.disciplina.nome}</h4>
+  
+        </div>
+  
+        <p className=" ml-12 font-medium text-sm mr-2">{Comentario.conteudo}</p>
+        
+        <div className = "ml-12 flex items-center gap-2 mb-4">
+          {/*<Image src = {commentUser} alt = "icone comentário" className = ""  width={25} height={25}/>
 
-        <h4 className="text-xs font-light">
-          {Comentario.createdAt
-            ? new Date(Comentario.createdAt).toLocaleString("pt-BR", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-              })
-            : "Data não disponível"}
-        </h4>
-
-        <h4 className="text-xs font-light">{aval?.professor.nome}</h4>
-        <h4 className="text-xs font-light">{aval?.disciplina.nome}</h4>
-      </div>
-
-      <p className=" ml-12 font-medium text-sm mr-2">{Comentario.conteudo}</p>
-
-      {/*<div className = "ml-12 flex items-center gap-2 mb-4">
-          <Image src = {commentUser} alt = "icone comentário" className = ""  width={25} height={25}/>
 
           <Link href={`/Avaliacoes/${Comentario.id}`}>
             <p className = "font-medium text-xs">{comentariosCount} comentário(s)</p>
-          </Link>
+          </Link>*/}
               
           {CanShowItem(Comentario.usuarioID)? (
             <div className = "flex flex-col mr-10">
-              <ModalComentario></ModalComentario>
+              {/*<ModalComentario avaliacaoID={aval?.id}></ModalComentario>*/}
               <ModalEditComentario></ModalEditComentario>
             </div>
           ): (
@@ -65,6 +69,7 @@ const Comentario = (Comentario: ComentarioData) => {
   
             </div>
           )}
+
         </div>*/}
 
       {CanShowItem(Comentario.usuarioID) ? (
@@ -79,3 +84,4 @@ const Comentario = (Comentario: ComentarioData) => {
 };
 
 export default Comentario;
+

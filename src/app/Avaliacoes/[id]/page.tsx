@@ -61,7 +61,7 @@ export default function Avaliacoes() {
                 </Link>
             </div>
 
-            <div className = "bg-[#71FDC5] w-1/3 items-center border-2 border-green-400 flex flex-col min-h-screen rounded-xl">
+            <div className = "bg-[#71FDC5] w-1/3 items-center border-2 border-green-400 flex flex-col min-h-screen rounded-xl mt-2">
                 <Avaliacao key={avaliacao.id} {...avaliacao}/>
                 { AAA && AAA.length > 0 ? (
                     AAA.map((coment) => (
