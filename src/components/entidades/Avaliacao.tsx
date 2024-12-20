@@ -41,8 +41,9 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
           height={25}
         />
 
-        <h3 className="text-xs font-bold">{user?.nome ?? "abc "}</h3>
-
+        <Link href={`/users/${user?.id}`}>
+          <h3 className="text-xs font-bold">{user?.nome ?? "abc "}</h3>
+        </Link>
         <h4 className="text-xs font-light">
           {Avaliacao.createdAt
             ? new Date(Avaliacao.createdAt).toLocaleString("pt-BR", {
@@ -55,8 +56,10 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
               })
             : "Data não disponível"}
         </h4>
-
+      
+      <Link href={`/professores/${Avaliacao.professorID}`}>
         <h4 className="text-xs font-light">{Avaliacao.professor.nome}</h4>
+      </Link>
         <h4 className="text-xs font-light">{Avaliacao.disciplina.nome}</h4>
       </div>
 
