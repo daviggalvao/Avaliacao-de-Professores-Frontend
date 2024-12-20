@@ -41,8 +41,9 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
           height={25}
         />
 
-        <h3 className="text-xs font-bold">{user?.nome ?? "abc "}</h3>
-
+        <Link href={`/users/${user?.id}`}>
+          <h3 className="text-xs font-bold">{user?.nome ?? "abc "}</h3>
+        </Link>
         <h4 className="text-xs font-light">
           {Avaliacao.createdAt
             ? new Date(Avaliacao.createdAt).toLocaleString("pt-BR", {
@@ -56,7 +57,9 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
             : "Data não disponível"}
         </h4>
 
-        <h4 className="text-xs font-light">{Avaliacao.professor.nome}</h4>
+        <Link href={`/professores/${Avaliacao.professorID}`}>
+          <h4 className="text-xs font-light">{Avaliacao.professor.nome}</h4>
+        </Link>
         <h4 className="text-xs font-light">{Avaliacao.disciplina.nome}</h4>
       </div>
 
@@ -77,12 +80,14 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
         </Link>
 
         {CanShowItem(Avaliacao.usuarioID) ? (
-          <div className="flex flex-col mr-10">
+          <div className="flex flex-row  gap-2 mr-10">
             <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
             <ModalEditAvaliação avaliacaoID={Avaliacao.id}></ModalEditAvaliação>
           </div>
         ) : (
-          <div></div>
+          <div className="flex flex-row mr-30">
+            <ModalComentario avaliacaoID={Avaliacao.id}></ModalComentario>
+          </div>
         )}
       </div>
     </div>

@@ -5,6 +5,7 @@ import "../../app/globals.css";
 import Image from "next/image";
 import commentUser from "../../assets/comment.svg";
 import pencil from "../../assets/pencil.svg";
+import plus from '../../assets/plus.svg'
 import { postComentario } from "../../app/_api/comentarioApi";
 import { getStorageUser } from "../../utils/auth";
 import Avaliacao from "../entidades/Avaliacao";
@@ -30,14 +31,11 @@ const ModalComentario = ({ avaliacaoID }: { avaliacaoID: number }) => {
 
   //setID(AvaliacaoID)
 
-  
-
-
   return (
     <div>
       <button onClick={() => setOpen(!open)}>
         <Image
-          src={pencil}
+          src={plus}
           alt="icone comentário"
           className=""
           width={25}
