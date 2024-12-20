@@ -25,12 +25,11 @@ const ModalEditAvaliação = ({ id }: { id: number }) => {
   const editAvaliação = async () => {
     try {
       const response = await updateComentario(id, input);
-      window.location.reload();
 
       if (response && response.data) {
         console.log("Avaliação updated successfully:", response.data);
       } else {
-        console.error("No data returned from updateAvaliacao");
+        console.error("No data returned from updateAvaliacao", response.data);
       }
       setOpen(false);
     } catch (error: any) {

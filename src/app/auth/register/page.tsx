@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import logoUnb from "../../../assets/logounb.png";
+import logoUnb from "../../../assets/logounb.svg";
 import "../../globals.css";
 import styles from "../../../aa_extra/styles/login.module.css";
 
