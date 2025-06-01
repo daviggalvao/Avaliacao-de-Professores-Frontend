@@ -54,7 +54,7 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
                 minute: "2-digit",
                 hour12: false,
               })
-            : "Data não disponível"}
+            : "Date not available"}
         </h4>
 
         <Link href={`/professores/${Avaliacao.professorID}`}>
@@ -75,7 +75,7 @@ const Avaliacao = (Avaliacao: AvaliacaoData) => {
         />
         <Link href={`/Avaliacoes/${Avaliacao.id}`}>
           <p className="font-medium text-xs">
-            {comentariosCount} comentário(s)
+            {comentariosCount} comment(s)
           </p>
         </Link>
 

@@ -57,7 +57,7 @@ const Header = () => {
 
             <Link href="/auth/register">
               <button className="text-white bg-[#00FFFF] px-1 py-1 rounded-md w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white shadow-md hover:shadow-lg focus:shadow-lg transform transition-transform duration-300 hover:-translate-y-2">
-                Criar Conta
+                Create
               </button>
             </Link>
           </>

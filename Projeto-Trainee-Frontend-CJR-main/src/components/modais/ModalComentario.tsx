@@ -5,47 +5,37 @@ import "../../app/globals.css";
 import Image from "next/image";
 import commentUser from "../../assets/comment.svg";
 import pencil from "../../assets/pencil.svg";
-
+import plus from '../../assets/plus.svg'
+import { postComentario } from "../../app/_api/comentarioApi";
 import { getStorageUser } from "../../utils/auth";
-import { updateComentario, deleteComentario } from "@/app/_api/comentarioApi";
+import Avaliacao from "../entidades/Avaliacao";
 
-const ModalEditComentario = ({ ComentarioID }: { ComentarioID: number }) => {
+const ModalComentario = ({ avaliacaoID }: { avaliacaoID: number }) => {
+  const user = getStorageUser();
   const [open, setOpen] = useState(false);
+
   const [input, setInput] = useState({
     conteudo: "",
+    usuarioID: user.id,
+    avaliacaoID: avaliacaoID,
   });
 
-  const delCom = async () => {
+  const createComentário = async () => {
     try {
-      await deleteComentario(ComentarioID);
+      await postComentario(input);
       window.location.reload();
     } catch (error) {}
   };
 
-  const editComentario = async () => {
-    try {
-      const response = await updateComentario(ComentarioID, input);
-      window.location.reload();
-      if (response && response.data) {
-        console.log("Avaliação updated successfully:", response.data);
-      } else {
-        console.error("No data returned from updateAvaliacao", response.data);
-      }
-      setOpen(false);
-    } catch (error: any) {
-      if (error.response) {
-        console.error("Error updating avaliação:", error.response.data);
-      } else {
-        console.error("Error updating avaliação:", error.message);
-      }
-    }
-  };
+  //const [avalID, setID] = useState(0);
+
+  //setID(AvaliacaoID)
 
   return (
     <div>
       <button onClick={() => setOpen(!open)}>
         <Image
-          src={pencil}
+          src={plus}
           alt="icone comentário"
           className=""
           width={25}
@@ -71,22 +61,16 @@ const ModalEditComentario = ({ ComentarioID }: { ComentarioID: number }) => {
             </div>
             <div className="flex">
               <button
-                onClick={editComentario}
+                onClick={createComentário}
                 className="text-white bg-[#00FFFF] mr-2 px-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
               >
-                Editar
-              </button>
-              <button
-                onClick={delCom}
-                className="text-white ml-56  bg-red-400  mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
-              >
-                Apagar
+                Comment
               </button>
               <button
                 onClick={() => setOpen(!open)}
-                className="text-white ml-56  bg-[#00FFFF]  mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
+                className="text-white ml-56 bg-[#00FFFF] mr-2 px-1 py-1 rounded-xl w-28 flex justify-center items-center cursor-pointer text-lg border-2 border-white"
               >
-                Sair
+                Exit
               </button>
             </div>
           </div>
@@ -98,4 +82,4 @@ const ModalEditComentario = ({ ComentarioID }: { ComentarioID: number }) => {
   );
 };
 
-export default ModalEditComentario;
+export default ModalComentario;

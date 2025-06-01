@@ -28,7 +28,7 @@ export default function PerfilAluno() {
   };
 
     if (!user) {
-        return <p>Carregando...</p>; // Exibe algo enquanto os dados de User estão sendo carregados
+        return <p>Loading...</p>; // Shows something while User data is being loaded
     }
     else {
         return (
@@ -49,13 +49,13 @@ export default function PerfilAluno() {
                   <div className = "ml-10">
                     <div className = "flex items-center justify-between w-full">
                       <Image src={ user?.foto_perfil && typeof user.foto_perfil === "string" ? user.foto_perfil: defaultFoto} 
-                      alt="Foto do Usuário" className= "w-32 h-32 border-4 border-black rounded-full mt-5 mb-2" width={50} height={50}/>
+                      alt="Foto de Usuario" className= "w-32 h-32 border-4 border-black rounded-full mt-5 mb-2" width={50} height={50}/>
                         
                       {CanShowItem(user?.id)? (
                         <div className = "flex flex-col mr-10">
                           <ModalPerfil></ModalPerfil>
-                          <button    onClick={delRed} 
-                          className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-b-2 border-black font-light">Excluir perfil</button>
+                          <button onClick={delRed} 
+                          className = "text-black bg-red-400 px-1 py-1 rounded-2xl w-30 h-8 flex justify-center items-center cursor-pointer text-lg border-b-2 border-black font-light">Delete profile</button>
                         </div>
                       ): (
                         <div>                                      
@@ -94,13 +94,13 @@ export default function PerfilAluno() {
                 </div>
 
                 <div className="flex flex-col flex-1 items-center">
-                  <h1 className="text-xl font-bold ml-4 mt-4">Publicações</h1>
+                  <h1 className="text-xl font-bold ml-4 mt-4">Publications</h1>
                   {user.Avaliacoes && user.Avaliacoes.length > 0 ? (
                     user.Avaliacoes.map((avaliacao) => (
                       <Avaliacao key={avaliacao.id} {...avaliacao} />
                     ))
                   ) : (
-                    <h2>Este usuário não fez nenhuma publicação</h2>
+                    <h2>This user has not made any publications</h2>
                   )} 
                 </div>
               </div>

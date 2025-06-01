@@ -18,7 +18,7 @@ export default function Login() {
 
     try {
       const response = await loginUser(email, senha);
-      console.log("Usuário autenticado com sucesso:", response);
+      console.log("User authenticated successfully:", response);
 
       // Saving the token in localStorage
       localStorage.setItem("token", response.token);
@@ -27,8 +27,8 @@ export default function Login() {
       // Redirecting the user
       window.location.href = "/";
     } catch (error) {
-      console.error("Erro na autenticação:", error);
-      setError("Email ou senha inválidos. Por favor, tente novamente.");
+      console.error("Authentication error:", error);
+      setError("Invalid email or password. Please try again.");
     }
   };
 
@@ -45,7 +45,7 @@ export default function Login() {
       </div>
       <div className="flex basis-2/4 flex-col justify-center items-center bg-background">
         <h1 className="text-center text-white text-5xl">
-          Avaliação de Professores
+          Professor Reviews
         </h1>
         <form onSubmit={handleLogin} className="text-black w-3/5">
           <label htmlFor="email"></label>
@@ -66,8 +66,8 @@ export default function Login() {
             className="text-center relative w-full p-5 mb-3 rounded-3xl"
             type="password"
             id="senha"
-            name="senha"
-            placeholder="Senha"
+            name="password"
+            placeholder="Password"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
           />
@@ -77,7 +77,7 @@ export default function Login() {
               type="submit"
               className="text-center bg-foreground text-white p-4 w-1/3 rounded-2xl"
             >
-              Entrar
+              Sign In
             </button>
           </div>
         </form>
@@ -86,8 +86,3 @@ export default function Login() {
   );
 }
 
-/*    <div className="">
-            <Link href = "/feed">
-              <button className = {styles.buttonc} >Entrar </button>
-            </Link>
-          </div>            */

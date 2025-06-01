@@ -42,7 +42,7 @@ export default function SignIn() {
 
       <div className="flex basis-2/4 flex-col justify-center items-center bg-background">
         <h1 className="text-center text-white text-5xl">
-          Avaliação de Professores
+          Professor Reviews
         </h1>
         <form className="text-black w-3/5 my-4">
           <input
@@ -54,25 +54,25 @@ export default function SignIn() {
           <input
             type="text"
             className="text-center relative w-full mb-3 p-5 rounded-3xl"
-            placeholder="Nome"
+            placeholder="Name"
             onChange={(e) => setInput({ ...input, nome: e.target.value })}
           />
           <input
             type="password"
             className="text-center relative w-full mb-3 p-5 rounded-3xl"
-            placeholder="Senha"
+            placeholder="Password"
             onChange={(e) => setInput({ ...input, senha: e.target.value })}
           />
           <input
             type="text"
             className="text-center relative w-full mb-3 p-5 rounded-3xl"
-            placeholder="Curso"
+            placeholder="Course"
             onChange={(e) => setInput({ ...input, curso: e.target.value })}
           />
           <input
             type="text"
             className="text-center relative w-full p-5 rounded-3xl"
-            placeholder="Departamento"
+            placeholder="Department"
             onChange={(e) =>
               setInput({ ...input, departamento: e.target.value })
             }
@@ -83,7 +83,7 @@ export default function SignIn() {
             onClick={createUser}
             className="text-center bg-foreground text-white p-4 w-3/4 rounded-2xl"
           >
-            Criar
+            Create
           </button>
         </div>
       </div>

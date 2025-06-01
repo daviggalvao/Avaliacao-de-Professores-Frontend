@@ -21,7 +21,7 @@ const Professor = ( Professor : ProfessorData) => {
   }, [])
 
   const disciplina = disciplinas.find(nome => nome.id === Professor.disciplinaID);
-  const nomeDisciplina = disciplina ? disciplina.nome : "Sem informações de disciplinas"
+  const nomeDisciplina = disciplina ? disciplina.nome : "No discipline information available"
 
   return (
     <div className ="bg-white my-4 w-56 h-48 p-2 rounded-md flex flex-col justify-center items-center border-b-2 border-black">

@@ -41,7 +41,7 @@ const Comentario = (Comentario: ComentarioData) => {
                 minute: "2-digit",
                 hour12: false,
               })
-            : "Data não disponível"}
+            : "Date not available"}
         </h4>
 
         <h4 className="text-xs font-light">{aval?.professor.nome}</h4>

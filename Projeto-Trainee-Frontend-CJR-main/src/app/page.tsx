@@ -26,6 +26,7 @@ export default function Home() {
 
 
   // Criar uma nova data para 2 dias atrás
+  // Create a new date for 2 days ago
   const today = new Date();
   const twoDaysAgo = new Date(today);
   twoDaysAgo.setDate(today.getDate() - 2);
@@ -45,24 +46,25 @@ export default function Home() {
       <div className="bg-sky-100 w-screen min-h-screen">
           <div className="bg-sky-100 ml-4 flex justify-between items-center">
             {/* component modal de avaliacao no lugar do button | deslogado->login || logado -> modal avaliacao*/}
+            {/* evaluation modal component instead of button | logged out->login || logged in -> evaluation modal*/}
             <div className="mt-4 flex">
               {IsAuthenticated() ? (
                   <ModalAvaliação></ModalAvaliação>
                 ) : (
                   <Link href="/auth/login">
-                    <button className = "bg-foreground p-2 mr-3 text-white font-bold flex justify-center items-center rounded-xl">Nova Publicação</button>
+                    <button className = "bg-foreground p-2 mr-3 text-white font-bold flex justify-center items-center rounded-xl">New Publication</button>
                   </Link>
                 )}
             </div>
-            <input type="text" placeholder="Buscar Professor(a)" className="bg-white-100 mr-8  w-60 h-8 rounded-lg" value = {input} onChange={(e) => setInput(e.target.value)}/>
+            <input type="text" placeholder=" Search Professor" className="bg-white-100 mr-4  w-60 h-8 rounded-lg" value = {input} onChange={(e) => setInput(e.target.value)}/>
           </div>
         <div className = "flex flex-col items-center">
           <div className="NovosProfessores">
 
             {isSearching ? (
-                <h1 className="ml-4 text-black text-4xl font-bold my-8 border-b-2 border-black">Professores encontrados</h1>
+                <h1 className="ml-4 text-black text-4xl font-bold my-8 border-b-2 border-black">Professors found</h1>
             ) : (
-              <h1 className="ml-4 text-black text-4xl font-bold my-8 border-b-2 border-black">Novos professores</h1>
+              <h1 className="ml-4 text-black text-4xl font-bold my-8 border-b-2 border-black">New professors</h1>
             )}
 
             <div className="bg-sky-100 grid grid-cols-4 ml-4 gap-20">
@@ -74,7 +76,7 @@ export default function Home() {
                     ))
                 ) : (
                   <div className="col-span-4 flex justify-center items-center">
-                    <p className="text-black">Nenhum professor encontrado.</p>
+                    <p className="text-black">No professor found.</p>
                   </div>
                 )
               ) : (
@@ -84,14 +86,14 @@ export default function Home() {
                       <Professor key={professor.id} {...professor} />
                     ))
                   ) : (
-                    <p className="text-black">Nenhum professor encontrado.</p>
+                    <p className="text-black">No professor found.</p>
                   )
               )}
             </div>
           </div>
 
           <div className="TodosProfessores bg-sky-100 ml-4">
-            <h1 className = "text-black font-bold my-8 text-4xl border-b-2 border-black">Todos os Professores</h1>
+            <h1 className = "text-black font-bold my-8 text-4xl border-b-2 border-black">All Professors</h1>
 
             <div className="bg-sky-100 grid grid-cols-4 gap-20">
               {professores.length > 0 ? (
@@ -99,7 +101,7 @@ export default function Home() {
                   <Professor key={professor.id} {...professor} />
                 ))
               ) : (
-                <p className="text-black">Nenhum professor encontrado.</p>
+                <p className="text-black">No professor found.</p>
               )}
             </div>
           </div>

@@ -35,10 +35,10 @@ export default function Perfilprofessor() {
             if (Array.isArray(avaliacoesData)) {
                 setAvaliacoes(avaliacoesData);
               } else {
-                console.log("Erro: dados de avaliações não são um array", avaliacoesData);
+                console.log("Error: evaluation data is not an array", avaliacoesData);
               }
           } catch(error) {
-            console.log("Dados não foram encontrados.");
+            console.log("Data not found.");
           }
         };
         fetchData();
@@ -46,13 +46,13 @@ export default function Perfilprofessor() {
       }, [])
     
       const disciplina = disciplinas.find(nome => nome.id === professor?.disciplinaID);
-      const nomeDisciplina = disciplina ? disciplina.nome : "Sem informações de disciplinas"
+      const nomeDisciplina = disciplina ? disciplina.nome : "No course information" 
       const avaliacaovect = Array.isArray(avaliacoes) ? avaliacoes.filter(avaliacao => avaliacao.professor === professor?.nome) : []; 
 
       console.log(avaliacaovect);
                 
     if (!professor) {
-        return <p>Carregando...</p>; // Exibe algo enquanto os dados de User estão sendo carregados
+        return <p>Loading...</p>; // Shows something while data is being loaded
     }
     else {
         return (
@@ -111,13 +111,13 @@ export default function Perfilprofessor() {
             </div>
 
             <div className="flex flex-col flex-1 items-center">
-              <h1 className="text-xl font-bold ml-4 mt-4">Avaliações</h1> 
+              <h1 className="text-xl font-bold ml-4 mt-4">Reviews</h1> 
                 {professor.Avaliacoes && professor.Avaliacoes.length > 0 ? (
                   professor.Avaliacoes.map((avaliacao) => (
                     <Avaliacao key={avaliacao.id} {...avaliacao} />
                   ))
                 ) : (
-                  <h2>Sem avaliações encontradas sobre esse professor.</h2>
+                  <h2>No reviews found for this teacher.</h2>
                 )} 
             </div>
           </div>

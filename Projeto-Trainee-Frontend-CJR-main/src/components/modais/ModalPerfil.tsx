@@ -18,7 +18,7 @@ const ModalPerfil = () => {
 
   const editUser = async () => {
     if (input.novaSenha !== input.novaSenhaConfirma) {
-      alert("As senhas não coincidem. Por favor, verifique e tente novamente.");
+      alert("The passwords do not match. Please check and try again.");
       return;
     }
 
@@ -37,10 +37,10 @@ const ModalPerfil = () => {
     try {
       // Enviar os dados para a API apenas se a senha for confirmada corretamente
       await updateUser(user.id, updateData);
-      alert("Usuário atualizado com sucesso!");
+      alert("User updated successfully!");
     } catch (error) {
-      console.error("Erro ao atualizar usuário:", error);
-      alert("Erro ao atualizar usuário. Por favor, tente novamente.");
+      console.error("Error updating user:", error);
+      alert("Error updating user. Please try again.");
     }
   };
 
@@ -59,33 +59,23 @@ const ModalPerfil = () => {
 
                 <form className = "text-black w-4/5">
                   <label htmlFor="nome"></label><br/>
-                  <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="name" id="nome" name="nome" placeholder = "Nome" 
+                  <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="name" id="nome" name="nome" placeholder = "Name" 
                          onChange={(e) => setInput({ ...input, nome: e.target.value })}/>
 
                   <label htmlFor="email"></label><br/>
                   <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="email" id="email" name="email" placeholder = "Email" 
                          onChange={(e) => setInput({ ...input, email: e.target.value })}/>
 
-                  {/*<label htmlFor="curso"></label><br/>*/}
-                  {/*<input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="name" id="curso" name="curso" placeholder = "Curso"/>*/}
-
-                  {/*<label htmlFor="departamento"></label><br/>*/}
-                  {/*<input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="name" id="departamento" name="departamento" placeholder = "Departamento"/>*/}
-
-                  {/*<label htmlFor="senha"></label><br/>
-                  <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="password" id="senha" name="senha" placeholder = "Senha atual"
-                         onChange={(e) => setInput({ ...input, senhaAtual: e.target.value })}/>*/}
-
                   <label htmlFor="senha"></label><br/>
-                  <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="password" id="senha" name="senha" placeholder = "Nova senha"
+                  <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="password" id="senha" name="senha" placeholder = "New password"
                          onChange={(e) => setInput({ ...input, novaSenha: e.target.value })}/>
 
                   <label htmlFor="senha"></label><br/>
-                  <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="password" id="senha" name="senha" placeholder = "Confirmar nova senha"
+                  <input className = "text-center relative w-full mb-3 p-3 rounded-3xl" type="password" id="senha" name="senha" placeholder = "Confirm new password"
                          onChange={(e) => setInput({ ...input, novaSenhaConfirma: e.target.value })}/>
                 </form> 
                 
-                <button onClick={() => { setOpen(false); editUser() }} className="text-center bg-foreground mb-4 w-28 text-white p-3 rounded-xl">Salvar</button>
+                <button onClick={() => { setOpen(false); editUser() }} className="text-center bg-foreground mb-4 w-28 text-white p-3 rounded-xl">Save</button>
             </div>
         </div>
     ) : (
