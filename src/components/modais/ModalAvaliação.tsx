@@ -50,7 +50,7 @@ const ModalAvaliação = () => {
 
   return (
     <div>
-      <button onClick={() => setOpen(!open)} className = "bg-foreground p-2 mr-3 text-white font-bold flex justify-center items-center rounded-xl">Nova Publicação</button>
+      <button onClick={() => setOpen(!open)} className = "bg-foreground p-2 mr-3 text-white font-bold flex justify-center items-center rounded-xl">New Publication</button>
       
       {open? (
         <div className="h-full w-full bg-black/40 fixed top-0 left-0">
