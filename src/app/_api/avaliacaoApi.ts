@@ -3,10 +3,9 @@ import { AvaliacaoData } from "../../types/Avaliacao";
 import { UpdateAvaliacao } from "../../types/Avaliacao";
 
 export const postAvaliacao = async (dados: AvaliacaoData) => {
-
-    try {
+  try {
     const token = localStorage.getItem("token"); // Retrieve the token from localStorage
-    const response = await api.post('avaliacao', dados, {
+    const response = await api.post("avaliacao", dados, {
       headers: {
         Authorization: `Bearer ${token}`, // Add the Authorization header
       },
@@ -18,7 +17,7 @@ export const postAvaliacao = async (dados: AvaliacaoData) => {
       console.error("Unauthorized: Please check your credentials.");
     }
   }
-}
+};
 
 export const getAllAvaliacoes = async (): Promise<AvaliacaoData[]> => {
   const response = await api.get("/avaliacao");
